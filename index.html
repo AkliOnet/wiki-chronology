@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Timeline | Basic demo</title>
+  <title>Timeline</title>
 
   <style type="text/css">
     body,
@@ -16,7 +16,7 @@
 
     .vis-item.red {
       background-color: rgb(248, 176, 176);
-      border-color: darkred;
+      border-color: rgb(189, 4, 4);
     }
 
     .vis-item.green {
@@ -108,16 +108,14 @@
 
     // create groups
     var groups = new vis.DataSet([
+      { id: 0, content: 'reigns' },
       { id: 1, subgroup: 4, content: 'people / <br>hadith compiler / <br>sira author / <br>historians / <br>scholars', subgroupVisibility: { 1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true, 9: true, 10: true } },
       { id: 2, content: 'important events' },
       { id: 3, content: 'science' },
-      { id: 4, content: 'hadiths' },
-      { id: 5, content: 'historical book' },
-      { id: 6, content: 'sirahs' },
-      { id: 7, content: 'tafsirs' },
-      { id: 8, content: 'fiqh' },
-      { id: 9, content: 'architecture' },
-      { id: 10, content: 'videos' },
+      { id: 4, content: 'religious' },
+      { id: 5, content: 'videos' },
+      { id: 6, content: 'historical book' },
+      { id: 7, content: 'architecture' },
     ]);
     // subgroups: familly sahabas religious_scholars  scientists other geographers
 
@@ -174,7 +172,7 @@
       { id: 225, group: 2, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/University_of_al-Qarawiyyin">University of al-Qarawiyyin<a>', type: 'point', start: '859-01-01' },
       { id: 226, group: 2, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Al-Azhar_University">Al-Azhar University<a>', type: 'point', start: '972-01-01' },
       { id: 227, group: 2, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Nezamiyeh">Nezamiyeh<a>', type: 'point', start: '1065-01-01' },
-      { id: 228, group: 2, subgroup: 4, content: '<a href="">Translation of the Quran in latin<a>', type: 'point', start: '1143-01-01' },
+      { id: 228, group: 2, subgroup: 4, content: '<a href="">Translation of the Quran in latin<a>', type: 'point', start: '1143-01-01' , className: "red" },
       { id: 229, group: 2, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Bayezid_II">Ban of the printing press<a>', type: 'point', start: '1483-01-01' },
       { id: 230, group: 2, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Council_of_Vienne">Council of Vienne<a>', type: 'point', start: '1312-01-01' , className: "red" },
       { id: 231, group: 2, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Black_Death">Black Death<a>', type: 'range', start: '1346-01-01', end: '1353-01-01', className: "red" },
@@ -196,8 +194,53 @@
       { id: 247, group: 2, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/World_War_II">World War II<a>', type: 'range', start: '1939-01-01' , end: '1945-01-01', className: "red" },
       { id: 248, group: 2, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Hundred_Years%27_War">Hundred Years\' War<a>', type: 'range', start: '1337-01-01' , end: '1453-01-01', className: "red" },
       { id: 249, group: 2, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Crusades">Crusades<a>', type: 'range', start: '1095-01-01' , end: '1291-01-01', className: "red" },
+      { id: 250, group: 2, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Feudalism">Feudalism<a>', type: 'range', start: '900-01-01' , end: '1300-01-01', className: "red" },
+      { id: 251, group: 2, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Inquisition">Inquisition<a>', type: 'range', start: '1200-01-01' , end: '1500-01-01', className: "red" },
+      { id: 252, group: 2, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Andr%C3%A9_du_Ryer">Translation of the Quran in French<a>', type: 'point', start: '1647-01-01' , end: '1500-01-01', className: "red" },
+      { id: 253, group: 2, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Secularism">Secularism<a>', type: 'range', start: '1789-01-01' , end: '2022-01-01', className: "red" },
+      { id: 254, group: 2, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Arabist">Cambridge chair of arabic<a>', type: 'point', start: '1632-01-01' , end: '2022-01-01', className: "red" },
+      { id: 255, group: 2, subgroup: 4, content: '<a href="">Arabic taught in Paris<a>', type: 'point', start: '1538-01-01' , end: '2022-01-01', className: "red" },
+      { id: 256, group: 2, subgroup: 4, content: '<a href="">Leiden chair of arabic<a>', type: 'point', start: '1600-01-01' , end: '2022-01-01', className: "red" },
+      { id: 257, group: 2, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/University_of_Bologna">University of Bologna<a>', type: 'point', start: '1088-01-01' , end: '2022-01-01', className: "red" },
+      { id: 258, group: 2, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/University_of_Paris">University of Paris<a>', type: 'point', start: '1150-01-01' , end: '2022-01-01', className: "red" },
+      { id: 260, group: 3, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Francis_Hauksbee">First electric lamp<a>', type: 'point', start: '1705-01-01' , end: '2022-01-01', className: "red" },
+      { id: 261, group: 3, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Evangelista_Torricelli">Barometer<a>', type: 'point', start: '1644-01-01' , end: '2022-01-01', className: "red" },
+      { id: 262, group: 3, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Arc_lamp">Arc lamp<a>', type: 'point', start: '1805-01-01' , end: '2022-01-01', className: "red" },
+      { id: 263, group: 3, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Oersted%27s_law">Oersted\'s law<a>', type: 'point', start: '1820-01-01' , end: '2022-01-01', className: "red" },
+      { id: 264, group: 3, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Voltaic_pile">Voltaic pile<a>', type: 'point', start: '1799-01-01' , end: '2022-01-01', className: "red" },
+      { id: 265, group: 3, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Electrolysis_of_water">Electrolysis of water<a>', type: 'point', start: '1800-01-01' , end: '2022-01-01', className: "red" },
+      { id: 266, group: 3, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/William_Sturgeon">Electromagnet<a>', type: 'point', start: '1824-01-01' , end: '2022-01-01', className: "red" },
+      { id: 267, group: 3, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Joseph_Henry">Electric relay<a>', type: 'point', start: '1835-01-01', end: '1878-01-01' ,className: "red" },
+      { id: 268, group: 3, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Electrical_telegraph">Electric telegraph<a>', type: 'point', start: '1838-01-01', end: '1878-01-01' ,className: "red" },
+      { id: 269, group: 3, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Optical_telegraph">Optical telegraph<a>', type: 'point', start: '1792-01-01', end: '1878-01-01' ,className: "red" },
+      { id: 270, group: 3, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Guglielmo_Marconi">Wireless telegraph<a>', type: 'point', start: '1895-01-01', end: '1878-01-01' ,className: "red" },
+      { id: 271, group: 3, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Reginald_Fessenden">Speech transmition by radio <a>', type: 'point', start: '1900-01-01', end: '1935-01-01',className: "red" },
+      { id: 272, group: 2, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Medici_Oriental_Press">Medici Oriental Press<a>', type: 'point', start: '1584-01-01', end: '1614-01-01' , className: "red" },
+      { id: 273, group: 2, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Friedrich_Risner">Book of optic translation<a>', type: 'point', start: '1572-01-01', end: '1614-01-01' , className: "red" },
+      { id: 274, group: 3, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/History_of_rail_transport">First steam locomotive<a>', type: 'point', start: '1804-01-01', end: '1614-01-01' , className: "red" },
+      { id: 275, group: 3, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/History_of_rail_transport">First electric locomotive<a>', type: 'point', start: '1837-01-01', end: '1614-01-01' , className: "red" },
+      { id: 276, group: 3, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Wagonway">Wagonway<a>', type: 'point', start: '1515-01-01', end: '1614-01-01' , className: "red" },
+      { id: 277, group: 2, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/History_of_patent_law">Patent law<a>', type: 'point', start: '1450-01-01', end: '1614-01-01' , className: "red" },
+      { id: 278, group: 2, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/History_of_patent_law">French patent law<a>', type: 'point', start: '1555-01-01', end: '1614-01-01' , className: "red" },
+      { id: 279, group: 2, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Channel_Tunnel">Channel Tunnel<a>', type: 'range', start: '1981-01-01', end: '1993-01-01' , className: "red" },
+      { id: 280, group: 3, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Telephone">Telephone<a>', type: 'point', start: '1876-01-01', end: '1993-01-01' , className: "red" },
+      { id: 281, group: 2, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/List_of_world%27s_fairs">Exhibitions<a>', type: 'range', start: '1791-01-01', end: '2022-01-01' , className: "red" },
+      { id: 282, group: 3, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Television">Television<a>', type: 'range', start: '1884-01-01', end: '1937-01-01' , className: "red" },
+      { id: 283, group: 3, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Computer">Computer<a>', type: 'range', start: '1943-01-01', end: '1971-01-01' , className: "red" },
+      { id: 284, group: 3, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Mohamed_M._Atalla">MOS transistor<a>', type: 'point', start: '1959-01-01', end: '2009-01-01'},
+      { id: 285, group: 3, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Daguerreotype">Photographie<a>', type: 'point', start: '1840-01-01', end: '2009-01-01' , className: "red" },
+      { id: 286, group: 3, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Rapid_transit">Rapid transit<a>', type: 'point', start: '1863-01-01', end: '2009-01-01' , className: "red" },
+      { id: 287, group: 2, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Le_Tour_de_la_France_par_deux_enfants">Le Tour de la France par deux enfants<a>', type: 'point', start: '1877-01-01', end: '2009-01-01' , className: "red" },
+      { id: 288, group: 2, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Civil_Rights_Act_of_1964">Civil Rights Act of 1964<a>', type: 'point', start: '1964-01-01', end: '2009-01-01' , className: "red" },
+      { id: 289, group: 3, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Gas_engine">Gas engine<a>', type: 'point', start: '1860-01-01', end: '2009-01-01' , className: "red" },
+      { id: 290, group: 3, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Hans_Lipperhey">Telescope<a>', type: 'point', start: '1608-01-01', end: '2009-01-01' , className: "red" },
+      { id: 291, group: 3, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Cornelis_Drebbel#Compound_microscope">Microscope<a>', type: 'point', start: '1619-01-01', end: '2009-01-01' , className: "red" },
+      { id: 292, group: 2, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Henry_Oldenburg">Oldenburg asks about Persians science<a>', type: 'point', start: '1666-01-01', end: '2009-01-01' , className: "red" },
+      { id: 293, group: 2, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Banu_Hilal">Banu Hilal invasion<a>', type: 'range', start: '1051-01-01', end: '1110-01-01' , className: "red" },
+      { id: 294, group: 2, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Arab_Spring">Arab Spring<a>', type: 'range', start: '2010-01-01', end: '1110-01-01' , className: "red" },
 
-
+        
+ 
 
       // hadith collectors
       { id: 400, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Muhammad_al-Bukhari">Muhammad al-Bukhari<a>', type: 'range', start: '810-01-01', end: '870-01-01' },
@@ -208,7 +251,9 @@
       { id: 405, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Al-Tirmidhi">Al-Tirmidhi<a>', type: 'range', start: '824-01-01', end: '892-01-01' },
       { id: 406, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Ibn_Majah">Ibn Majah<a>', type: 'range', start: '824-01-01', end: '887-01-01' },
       { id: 407, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Ali_ibn_al-Madini">Ali ibn al-Madini<a>', type: 'range', start: '778-01-01', end: '849-01-01' },
+      { id: 408, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Hammam_ibn_Munabbih">Hammam ibn Munabbih<a>', type: 'range', start: '660-01-01', end: '750-01-01' },
 
+        
 
       // historians
       { id: 452, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Ibn_Ishaq">Ibn Ishaq<a>', type: 'range', start: '704-01-01', end: '767-01-01' },
@@ -218,7 +263,9 @@
       { id: 457, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Al-Waqidi">Al-Waqidi<a>', type: 'range', start: '747-01-01', end: '823-01-01' },
       { id: 458, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Al-Dhahabi">Al-Dhahabi<a>', type: 'range', start: '1274-01-01', end: '1348-01-01' },
       { id: 459, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Al-Maqrizi">Al-Maqrizi<a>', type: 'range', start: '1364-01-01', end: '1442-01-01' },
+      { id: 460, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Ibn_al-Khatib">Ibn al-Khatib<a>', type: 'range', start: '1313-01-01', end: '1374-01-01' },
 
+          
       // scholars
       { id: 500, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Abu_Hanifa">Abu Hanifa<a>', type: 'range', start: '699-01-01', end: '767-01-01' },
       { id: 501, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Ahmad_ibn_Hanbal">Ahmad ibn Hanbal<a>', type: 'range', start: '780-01-01', end: '855-01-01' },
@@ -244,10 +291,17 @@
       { id: 521, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Ibn_Arabi">Ibn Arabi<a>', type: 'range', start: '1165-01-01', end: '1240-01-01' },
       { id: 522, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Rumi">Rumi<a>', type: 'range', start: '1207-01-01', end: '1273-01-01' },
       { id: 523, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Jami">Jami<a>', type: 'range', start: '1414-01-01', end: '1492-01-01' },
+      { id: 524, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Abu_Hasan_al-Ash%27ari">Abu Hasan al-Ash\'ari<a>', type: 'range', start: '879-01-01', end: '936-01-01' },
+      { id: 525, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Nizam_al-Mulk">Nizam al-Mulk<a>', type: 'range', start: '1064-01-01', end: '1092-01-01' },
+      { id: 526, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Muhammad_ibn_Abd_al-Wahhab">Muhammad ibn Abd al-Wahhab<a>', type: 'range', start: '1703-01-01', end: '1792-01-01' },
+      { id: 527, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Thomas_Aquinas">Thomas Aquinas<a>', type: 'range', start: '1225-01-01', end: '1274-01-01' , className: "red" },
+
+        
 
       // philogopher
       { id: 550, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Ren%C3%A9_Descartes">René Descartes<a>', type: 'range', start: '1596-01-01', end: '1650-01-01', className: "red" },
       { id: 551, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Immanuel_Kant">Immanuel Kant<a>', type: 'range', start: '1724-01-01', end: '1804-01-01', className: "red" },
+      { id: 552, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Karl_Marx">Karl Marx<a>', type: 'range', start: '1818-01-01', end: '1883-01-01', className: "red" },
 
         
       //mecanic
@@ -258,6 +312,8 @@
       { id: 604, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Ibn_Khalaf_al-Muradi">Ibn Khalaf al-Muradi<a>', type: 'range', start: '1136-01-01', end: '1206-01-01' },
       { id: 605, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Lag%C3%A2ri_Hasan_%C3%87elebi">Lagâri Hasan Çelebi<a>', type: 'range', start: '1600-01-01', end: '1633-01-01' },
       { id: 606, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Haly_Abenragel">Haly Abenragel<a>', type: 'range', start: '970-01-01', end: '1037-01-01' },
+      { id: 607, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Vannoccio_Biringuccio">Vannoccio Biringuccio<a>', type: 'range', start: '1480-01-01', end: '1539-01-01' , className: "red" },
+      { id: 608, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Georgius_Agricola">Georgius Agricola<a>', type: 'range', start: '1494-01-01', end: '1555-01-01' , className: "red" },
 
 
       // architect
@@ -275,7 +331,6 @@
       { id: 710, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Robert_Boyle">Robert Boyle<a>', type: 'range', start: '1627-01-01', end: '1691-01-01', className: "red" },
       { id: 711, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Michael_Faraday">Michael Faraday<a>', type: 'range', start: '1791-01-01', end: '1867-01-01', className: "red" },
       { id: 712, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Charles-Augustin_de_Coulomb">Charles-Augustin de Coulomb<a>', type: 'range', start: '1736-01-01', end: '1806-01-01', className: "red" },
-      { id: 713, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/James_Clerk_Maxwell">James Clerk Maxwell<a>', type: 'range', start: '1831-01-01', end: '1879-01-01', className: "red" },
       { id: 714, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/William_Thomson,_1st_Baron_Kelvin">William Thomson, 1st Baron Kelvin<a>', type: 'range', start: '1824-01-01', end: '1907-01-01', className: "red" },
       { id: 715, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Andr%C3%A9-Marie_Amp%C3%A8re">André-Marie Ampère<a>', type: 'range', start: '1775-01-01', end: '1836-01-01', className: "red" },
       { id: 716, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Robert_Hooke">Robert Hooke<a>', type: 'range', start: '1635-01-01', end: '1703-01-01', className: "red" },
@@ -285,29 +340,37 @@
       { id: 720, group: 1, subgroup: 4, content: '<a href="https://fr.wikipedia.org/wiki/Nikola_Tesla">Nikola Tesla<a>', type: 'range', start: '1856-01-01', end: '1943-01-01', className: "red" },
       { id: 721, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/James_Watt">James Watt<a>', type: 'range', start: '1736-01-01', end: '1819-01-01', className: "red" },
       { id: 722, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Montgolfier_brothers">Montgolfier brothers<a>', type: 'range', start: '1740-01-01', end: '1810-01-01', className: "red" },
+      { id: 723, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/William_Gilbert_(physician)">William Gilbert (physician)<a>', type: 'range', start: '1544-01-01', end: '1603-01-01', className: "red" },
+      { id: 724, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Luigi_Galvani">Luigi Galvani<a>', type: 'range', start: '1737-01-01', end: '1798-01-01', className: "red" },
+      { id: 725, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Otto_von_Guericke">Otto von Guericke<a>', type: 'range', start: '1602-01-01', end: '1686-01-01', className: "red" },
+      { id: 726, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Francis_Hauksbee">Francis Hauksbee<a>', type: 'range', start: '1663-01-01', end: '1713-01-01', className: "red" },
+      { id: 727, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Georg_Matthias_Bose">Georg Matthias Bose<a>', type: 'range', start: '1710-01-01', end: '1761-01-01', className: "red" },
+      { id: 728, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Alessandro_Volta">Alessandro Volta<a>', type: 'range', start: '1745-01-01', end: '1827-01-01', className: "red" },
+      { id: 729, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/William_Nicholson_(chemist)">William Nicholson<a>', type: 'range', start: '1753-01-01', end: '1815-01-01', className: "red" },
+      { id: 730, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Hans_Christian_%C3%98rsted">Hans Christian Ørsted<a>', type: 'range', start: '1777-01-01', end: '1851-01-01', className: "red" },
+      { id: 731, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/James_Clerk_Maxwell">James Clerk Maxwell<a>', type: 'range', start: '1831-01-01', end: '1879-01-01', className: "red" },
+      { id: 732, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Georg_Ohm">Georg Ohm<a>', type: 'range', start: '1789-01-01', end: '1854-01-01', className: "red" },
+      { id: 733, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Stephen_Gray_(scientist)">Stephen Gray (scientist)<a>', type: 'range', start: '1666-01-01', end: '1736-01-01' , className: "red" },
+      { id: 735, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Humphry_Davy">Humphry Davy<a>', type: 'range', start: '1778-01-01', end: '1829-01-01' , className: "red" },
+      { id: 736, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/William_Sturgeon">William Sturgeon<a>', type: 'range', start: '1783-01-01', end: '1850-01-01' , className: "red" },
+      { id: 737, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Joseph_Henry">Joseph Henry<a>', type: 'range', start: '1797-01-01', end: '1878-01-01' , className: "red" },
+      { id: 738, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Heinrich_Hertz">Heinrich Hertz<a>', type: 'range', start: '1857-01-01', end: '1894-01-01' , className: "red" },
+      { id: 739, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Wilhelm_Homberg">Wilhelm Homberg<a>', type: 'range', start: '1652-01-01', end: '1715-01-01' , className: "red" },
+      { id: 740, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Thomas_Wedgwood_(photographer)">Thomas Wedgwood (photographer)<a>', type: 'range', start: '1771-01-01', end: '1805-01-01' , className: "red" },
+      { id: 741, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Nic%C3%A9phore_Ni%C3%A9pce">Nicéphore Niépce<a>', type: 'range', start: '1765-01-01', end: '1833-01-01' , className: "red" },
+      { id: 743, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Louis_Daguerre">Louis Daguerre<a>', type: 'range', start: '1787-01-01', end: '1851-01-01' , className: "red" },
+      { id: 744, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Guglielmo_Marconi">Guglielmo Marconi<a>', type: 'range', start: '1874-01-01', end: '1937-01-01' , className: "red" },
+      { id: 746, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Reginald_Fessenden">Reginald Fessenden<a>', type: 'range', start: '1866-01-01', end: '1935-01-01' , className: "red" },
+      { id: 747, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Alexander_Graham_Bell">Alexander Graham Bell<a>', type: 'range', start: '1847-01-01', end: '1922-01-01' , className: "red" },
+      { id: 748, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Charles_Darwin">Charles Darwin<a>', type: 'range', start: '1809-01-01', end: '1882-01-01' , className: "red" },
+      { id: 749, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Mohamed_M._Atalla">Mohamed M. Atalla<a>', type: 'range', start: '1924-01-01', end: '2009-01-01' },
+      { id: 750, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Jan_Swammerdam">Jan Swammerdam<a>', type: 'range', start: '1637-01-01', end: '1680-01-01' , className: "red" },
+      { id: 751, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Antonie_van_Leeuwenhoek">Antonie van Leeuwenhoek<a>', type: 'range', start: '1632-01-01', end: '1723-01-01' , className: "red" },
+      { id: 752, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Hans_Lipperhey">Hans Lipperhey<a>', type: 'range', start: '1570-01-01', end: '1619-01-01' , className: "red" },
+      { id: 753, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Isaac_Newton">Isaac Newton<a>', type: 'range', start: '1643-01-01', end: '1727-01-01', className: "red" },
+      { id: 754, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Erasmus">Erasmus<a>', type: 'range', start: '1466-01-01', end: '1536-01-01', className: "red" },
 
 
-
-
-      //geo
-      { id: 750, group: 1, subgroup: 6, content: '<a href="https://en.wikipedia.org/wiki/Ibn_Jubayr">Ibn Jubayr<a>', type: 'range', start: '1145-01-01', end: '1217-01-01' },
-      { id: 751, group: 1, subgroup: 6, content: '<a href="https://en.wikipedia.org/wiki/Ibn_Battuta">Ibn Battuta<a>', type: 'range', start: '1304-01-01', end: '1369-01-01' },
-      { id: 752, group: 1, subgroup: 6, content: '<a href="https://en.wikipedia.org/wiki/Al-Masudi">Al-Masudi<a>', type: 'range', start: '896-01-01', end: '956-01-01' },
-      { id: 753, group: 1, subgroup: 6, content: '<a href="https://en.wikipedia.org/wiki/Muhammad_al-Idrisi">Muhammad al-Idrisi<a>', type: 'range', start: '1100-01-01', end: '1165-01-01' },
-      { id: 754, group: 1, subgroup: 6, content: '<a href="https://en.wikipedia.org/wiki/Ahmad_ibn_Fadlan">Ahmad ibn Fadlan<a>', type: 'range', start: '879-01-01', end: '960-01-01' },
-      { id: 755, group: 1, subgroup: 6, content: '<a href="https://en.wikipedia.org/wiki/Piri_Reis">Piri Reis<a>', type: 'range', start: '1465-01-01', end: '1553-01-01' },
-      { id: 756, group: 1, subgroup: 6, content: '<a href="https://en.wikipedia.org/wiki/Marco_Polo">Marco Polo<a>', type: 'range', start: '1254-01-01', end: '1324-01-01', className: "red" },
-      { id: 757, group: 1, subgroup: 6, content: '<a href="https://en.wikipedia.org/wiki/Christopher_Columbus">Christopher Columbus<a>', type: 'range', start: '1451-01-01', end: '1506-01-01', className: "red" },
-      { id: 758, group: 1, subgroup: 6, content: '<a href="https://en.wikipedia.org/wiki/Ferdinand_Magellan">Ferdinand Magellan<a>', type: 'range', start: '1480-01-01', end: '1521-01-01', className: "red" },
-      { id: 759, group: 1, subgroup: 6, content: '<a href="https://en.wikipedia.org/wiki/Zheng_He">Zheng He<a>', type: 'range', start: '1371-01-01', end: '1433-01-01' },
-      { id: 760, group: 1, subgroup: 6, content: '<a href="https://en.wikipedia.org/wiki/Ahmad_ibn_M%C4%81jid">Ahmad ibn Mājid<a>', type: 'range', start: '1432-01-01', end: '1500-01-01' },
-      { id: 761, group: 1, subgroup: 6, content: '<a href="https://en.wikipedia.org/wiki/Abd_al-Razzaq_Samarqandi">Abd al-Razzaq Samarqandi<a>', type: 'range', start: '1413-01-01', end: '1482-01-01' },
-      { id: 762, group: 1, subgroup: 6, content: '<a href="https://en.wikipedia.org/wiki/Ibrahim_ibn_Yaqub">Ibrahim ibn Yaqub<a>', type: 'range', start: '912-01-01', end: '966-01-01' },
-      { id: 763, group: 1, subgroup: 6, content: '<a href="https://en.wikipedia.org/wiki/Al-Bakri">Al-Bakri<a>', type: 'range', start: '1040-01-01', end: '1094-01-01' },
-      { id: 764, group: 1, subgroup: 6, content: '<a href="https://en.wikipedia.org/wiki/Ibn_Khordadbeh">Ibn Khordadbeh<a>', type: 'range', start: '820-01-01', end: '913-01-01' },
-      { id: 765, group: 1, subgroup: 6, content: '<a href="https://en.wikipedia.org/wiki/Vasco_da_Gama">Vasco da Gama<a>', type: 'range', start: '1460-01-01', end: '1524-01-01' , className: "red" },
-      { id: 766, group: 1, subgroup: 6, content: '<a href="https://en.wikipedia.org/wiki/Hern%C3%A1n_Cort%C3%A9s">Hernán Cortés<a>', type: 'range', start: '1485-01-01', end: '1547-01-01' , className: "red" },
-      { id: 767, group: 1, subgroup: 6, content: '<a href="https://en.wikipedia.org/wiki/Pedro_%C3%81lvares_Cabral">Pedro Álvares Cabral<a>', type: 'range', start: '1467-01-01', end: '1520-01-01' , className: "red" },
 
 
       // mathematician
@@ -324,6 +387,7 @@
       { id: 813, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Jamshid_al-Kashi">Jamshid al-Kashi<a>', type: 'range', start: '1380-01-01', end: '1429-01-01'},
       { id: 814, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Abu%27l-Hasan_ibn_Ali_al-Qalasadi">Abu\'l-Hasan ibn Ali al-Qalasadi<a>', type: 'range', start: '1412-01-01', end: '1486-01-01'},
       { id: 815, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Leonhard_Euler">Leonhard Euler<a>', type: 'range', start: '1707-01-01', end: '1783-01-01', className: "red" },
+      { id: 816, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Th%C4%81bit_ibn_Qurra">Thābit ibn Qurra<a>', type: 'range', start: '830-01-01', end: '901-01-01'},
 
 
       // astronomy
@@ -340,10 +404,29 @@
       { id: 860, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Ibn_al-Shatir">Ibn al-Shatir<a>', type: 'range', start: '1304-01-01', end: '1375-01-01' },
       { id: 861, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Edmond_Halley">Edmond Halley<a>', type: 'range', start: '1656-01-01', end: '1742-01-01', className: "red" },
       { id: 862, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Ali_Qushji">Ali Qushji<a>', type: 'range', start: '1403-01-01', end: '1474-01-01' },
+      { id: 863, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Al-Birjandi">Al-Birjandi<a>', type: 'range', start: '1470-01-01', end: '1528-01-01' },
 
 
-      // physisists
-      { id: 900, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Isaac_Newton">Isaac Newton<a>', type: 'range', start: '1643-01-01', end: '1727-01-01', className: "red" },
+      //geo
+      { id: 900, group: 1, subgroup: 6, content: '<a href="https://en.wikipedia.org/wiki/Ibn_Jubayr">Ibn Jubayr<a>', type: 'range', start: '1145-01-01', end: '1217-01-01' },
+      { id: 901, group: 1, subgroup: 6, content: '<a href="https://en.wikipedia.org/wiki/Ibn_Battuta">Ibn Battuta<a>', type: 'range', start: '1304-01-01', end: '1369-01-01' },
+      { id: 902, group: 1, subgroup: 6, content: '<a href="https://en.wikipedia.org/wiki/Al-Masudi">Al-Masudi<a>', type: 'range', start: '896-01-01', end: '956-01-01' },
+      { id: 903, group: 1, subgroup: 6, content: '<a href="https://en.wikipedia.org/wiki/Muhammad_al-Idrisi">Muhammad al-Idrisi<a>', type: 'range', start: '1100-01-01', end: '1165-01-01' },
+      { id: 904, group: 1, subgroup: 6, content: '<a href="https://en.wikipedia.org/wiki/Ahmad_ibn_Fadlan">Ahmad ibn Fadlan<a>', type: 'range', start: '879-01-01', end: '960-01-01' },
+      { id: 905, group: 1, subgroup: 6, content: '<a href="https://en.wikipedia.org/wiki/Piri_Reis">Piri Reis<a>', type: 'range', start: '1465-01-01', end: '1553-01-01' },
+      { id: 906, group: 1, subgroup: 6, content: '<a href="https://en.wikipedia.org/wiki/Marco_Polo">Marco Polo<a>', type: 'range', start: '1254-01-01', end: '1324-01-01', className: "red" },
+      { id: 907, group: 1, subgroup: 6, content: '<a href="https://en.wikipedia.org/wiki/Christopher_Columbus">Christopher Columbus<a>', type: 'range', start: '1451-01-01', end: '1506-01-01', className: "red" },
+      { id: 908, group: 1, subgroup: 6, content: '<a href="https://en.wikipedia.org/wiki/Ferdinand_Magellan">Ferdinand Magellan<a>', type: 'range', start: '1480-01-01', end: '1521-01-01', className: "red" },
+      { id: 909, group: 1, subgroup: 6, content: '<a href="https://en.wikipedia.org/wiki/Zheng_He">Zheng He<a>', type: 'range', start: '1371-01-01', end: '1433-01-01' },
+      { id: 910, group: 1, subgroup: 6, content: '<a href="https://en.wikipedia.org/wiki/Ahmad_ibn_M%C4%81jid">Ahmad ibn Mājid<a>', type: 'range', start: '1432-01-01', end: '1500-01-01' },
+      { id: 911, group: 1, subgroup: 6, content: '<a href="https://en.wikipedia.org/wiki/Abd_al-Razzaq_Samarqandi">Abd al-Razzaq Samarqandi<a>', type: 'range', start: '1413-01-01', end: '1482-01-01' },
+      { id: 912, group: 1, subgroup: 6, content: '<a href="https://en.wikipedia.org/wiki/Ibrahim_ibn_Yaqub">Ibrahim ibn Yaqub<a>', type: 'range', start: '912-01-01', end: '966-01-01' },
+      { id: 913, group: 1, subgroup: 6, content: '<a href="https://en.wikipedia.org/wiki/Al-Bakri">Al-Bakri<a>', type: 'range', start: '1040-01-01', end: '1094-01-01' },
+      { id: 914, group: 1, subgroup: 6, content: '<a href="https://en.wikipedia.org/wiki/Ibn_Khordadbeh">Ibn Khordadbeh<a>', type: 'range', start: '820-01-01', end: '913-01-01' },
+      { id: 915, group: 1, subgroup: 6, content: '<a href="https://en.wikipedia.org/wiki/Vasco_da_Gama">Vasco da Gama<a>', type: 'range', start: '1460-01-01', end: '1524-01-01' , className: "red" },
+      { id: 916, group: 1, subgroup: 6, content: '<a href="https://en.wikipedia.org/wiki/Hern%C3%A1n_Cort%C3%A9s">Hernán Cortés<a>', type: 'range', start: '1485-01-01', end: '1547-01-01' , className: "red" },
+      { id: 917, group: 1, subgroup: 6, content: '<a href="https://en.wikipedia.org/wiki/Pedro_%C3%81lvares_Cabral">Pedro Álvares Cabral<a>', type: 'range', start: '1467-01-01', end: '1520-01-01' , className: "red" },
+
 
       // medecine 
       { id: 950, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Al-Zahrawi">Albucasis<a>', type: 'range', start: '940-01-01', end: '1013-01-01' },
@@ -353,6 +436,9 @@
       { id: 954, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Ibn_Zuhr">Ibn Zuhr<a>', type: 'range', start: '1094-01-01', end: '1162-01-01' },
       { id: 955, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Sabuncuo%C4%9Flu_%C5%9Eerafeddin">Sabuncuoğlu Şerafeddin<a>', type: 'range', start: '1385-01-01', end: '1468-01-01' },
       { id: 956, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/William_Harvey">William Harvey<a>', type: 'range', start: '1578-01-01', end: '1657-01-01' , className: "red" },
+      { id: 957, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Ambroise_Par%C3%A9">Ambroise Paré<a>', type: 'range', start: '1510-01-01', end: '1590-01-01' , className: "red" },
+      { id: 958, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Al-Ruhawi">Al-Ruhawi<a>', type: 'range', start: '920-01-01', end: '980-01-01' },
+      { id: 959, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Ibn_al-Nafis">Ibn al-Nafis<a>', type: 'range', start: '1213-01-01', end: '1288-01-01' },
 
 
       // books and others
@@ -360,16 +446,16 @@
       { id: 1001, group: 4, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Sahih_Muslim">Sahih Muslim<a>', type: 'point', start: '845-01-01' },
       { id: 1002, group: 4, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Al-Sunan_al-Sughra">Al-Sunan al-Sughra<a>', type: 'point', start: '872-01-01' },
       { id: 1003, group: 4, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Muwatta_Imam_Malik">Muwatta Imam Malik<a>', type: 'point', start: '753-01-01' },
-      { id: 1004, group: 6, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Al-Sirah_al-Nabawiyyah_(Ibn_Hisham)">Al-Sirah al-Nabawiyyan<a>', type: 'point', start: '800-01-01' },
-      { id: 1005, group: 7, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Tafsir_al-Tabari">Tafsir al-Tabari<a>', type: 'point', start: '870-01-01' },
-      { id: 1006, group: 7, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Ibn_Kathir#Tafsir">Tafsir Ibn Kathir<a>', type: 'point', start: '1335-01-01' },
+      { id: 1004, group: 4, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Al-Sirah_al-Nabawiyyah_(Ibn_Hisham)">Al-Sirah al-Nabawiyyan<a>', type: 'point', start: '800-01-01' },
+      { id: 1005, group: 4, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Tafsir_al-Tabari">Tafsir al-Tabari<a>', type: 'point', start: '870-01-01' },
+      { id: 1006, group: 4, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Ibn_Kathir#Tafsir">Tafsir Ibn Kathir<a>', type: 'point', start: '1335-01-01' },
       { id: 1007, group: 4, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Sa\'id_bin_Ali_bin_Wahf_Al-Qahtani">Hisnul Muslim<a>', type: 'point', start: '1989-01-01' },
       { id: 1008, group: 4, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Musnad_al-Shafi%27i">Musnad al-Shafi\'i<a>', type: 'point', start: '793-01-01' },
-      { id: 1009, group: 7, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Al-Risala_(al-Shafi%CA%BDi_book)">Al-Risala<a>', type: 'point', start: '793-01-01' },
+      { id: 1009, group: 4, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Al-Risala_(al-Shafi%CA%BDi_book)">Al-Risala<a>', type: 'point', start: '793-01-01' },
       { id: 1010, group: 4, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/The_Meadows_of_the_Righteous">The Meadows of the Righteous<a>', type: 'point', start: '1250-01-01' },
       { id: 1011, group: 4, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Al-Nawawi%27s_Forty_Hadith">Al-Nawawi\'s Forty Hadith<a>', type: 'point', start: '1250-01-01' },
-      { id: 1012, group: 7, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Tafsir_al-Maturidi">Tafsir al-Maturidi<a>', type: 'point', start: '1250-01-01' },
-      { id: 1013, group: 7, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Tafsir_al-Tha%27labi">Tafsir al-Tha\'labi<a>', type: 'point', start: '1000-01-01' },
+      { id: 1012, group: 4, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Tafsir_al-Maturidi">Tafsir al-Maturidi<a>', type: 'point', start: '1250-01-01' },
+      { id: 1013, group: 4, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Tafsir_al-Tha%27labi">Tafsir al-Tha\'labi<a>', type: 'point', start: '1000-01-01' },
       { id: 1014, group: 4, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Al-Waqidi">Kitab al-Tarikh wa al-Maghazi<a>', type: 'point', start: '833-01-01' },
       { id: 1015, group: 4, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/History_of_the_Prophets_and_Kings">History of the Prophets and Kings<a>', type: 'point', start: '883-01-01' },
       { id: 1016, group: 4, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Tahdhib_al-Athar">Tahdhib al-Athar<a>', type: 'point', start: '883-01-01' },
@@ -378,24 +464,55 @@
       { id: 1019, group: 4, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Sunan_ibn_Majah">Sunan ibn Majah<a>', type: 'point', start: '855-01-01' },
       { id: 1020, group: 3, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Book_of_Optics">Book of Optics<a>', type: 'point', start: '1015-01-01' },
       { id: 1022, group: 2, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Quran">Quran<a>', type: 'range', start: '610-01-01', end: '632-01-01' },
-      { id: 1023, group: 6, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Al-Shifa_bi_Ta%27rif_Huquq_al-Mustafa">Al-Shifa bi Ta\'rif Huquq al-Mustafa<a>', type: 'point', start: '1010-01-01' },
+      { id: 1023, group: 4, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Al-Shifa_bi_Ta%27rif_Huquq_al-Mustafa">Al-Shifa bi Ta\'rif Huquq al-Mustafa<a>', type: 'point', start: '1010-01-01' },
       { id: 1024, group: 3, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Early_world_maps#Genoese_map_(1457)">Genoese map<a>', type: 'point', start: '1457-01-01', classNanme: 'red' },
       { id: 1025, group: 3, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Cantino_planisphere">Cantino planisphere<a>', type: 'point', start: '1502-01-01', className: 'red' },
 
       //translators
       { id: 1500, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Peter_the_Venerable">Peter the Venerable<a>', type: 'range', start: '1092-01-01', end: '1156-01-01', className: "red" },
       { id: 1501, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Robert_of_Chester">Robert of Chester<a>', type: 'range', start: '1100-01-01', end: '1150-01-01', className: "red" },
-      { id: 1502, group: 1, subgroup: 4, content: '<a href="https://fr.wikipedia.org/wiki/Herman_le_Dalmate">Herman le Dalmate<a>', type: 'range', start: '1110-01-01', end: '1160-01-01', className: "red" },
+      { id: 1502, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Herman_le_Dalmate">Herman le Dalmate<a>', type: 'range', start: '1110-01-01', end: '1160-01-01', className: "red" },
       { id: 1503, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Plato_Tiburtinus">Plato Tiburtinus<a>', type: 'range', start: '1100-01-01', end: '1150-01-01', className: "red" },
+      { id: 1504, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Levinus_Warner">Levinus Warner<a>', type: 'range', start: '1618-01-01', end: '1665-01-01', className: "red" },
+      { id: 1505, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Guillaume_Postel">Guillaume Postel<a>', type: 'range', start: '1510-01-01', end: '1581-01-01', className: "red" },
+      { id: 1506, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Leo_Africanus">Leo Africanus<a>', type: 'range', start: '1494-01-01', end: '1554-01-01', className: "red" },
+      { id: 1507, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Theodore_Bibliander">Theodore Bibliander<a>', type: 'range', start: '1509-01-01', end: '1564-01-01', className: "red" },
+      { id: 1508, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/William_Bedwell">William Bedwell<a>', type: 'range', start: '1531-01-01', end: '1632s-01-01', className: "red" },
+
+          
 
       // architecture
-      { id: 1600, group: 9, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Mosque%E2%80%93Cathedral_of_C%C3%B3rdoba">Great Mosque of Córdoba<a>', type: 'point', start: '787-01-01' },
-      { id: 1601, group: 9, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Mosque_of_Cristo_de_la_Luz">Bab Mardum Mosque<a>', type: 'point', start: '999-01-01' },
-      { id: 1602, group: 9, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Motte-and-bailey_castle">Motte-and-bailey castle<a>', type: 'point', start: '979-01-01', className: "red" },
-      { id: 1603, group: 9, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Court_of_the_Lions">Court of the Lions<a>', type: 'point', start: '1362-01-01' },
+      { id: 1600, group: 7, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Mosque%E2%80%93Cathedral_of_C%C3%B3rdoba">Great Mosque of Córdoba<a>', type: 'point', start: '787-01-01' },
+      { id: 1601, group: 7, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Mosque_of_Cristo_de_la_Luz">Bab Mardum Mosque<a>', type: 'point', start: '999-01-01' },
+      { id: 1602, group: 7, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Motte-and-bailey_castle">Motte-and-bailey castle<a>', type: 'point', start: '979-01-01', className: "red" },
+      { id: 1603, group: 7, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Court_of_the_Lions">Court of the Lions<a>', type: 'point', start: '1362-01-01' },
+      { id: 1605, group: 7, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Eiffel_Tower">Eiffel Tower<a>', type: 'point', start: '1889-01-01' },
+      { id: 1606, group: 7, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Lincoln_Cathedral">Lincoln Cathedral<a>', type: 'point', start: '1311-01-01' },
+      { id: 1607, group: 7, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/E._V._Haughwout_Building">E. V. Haughwout Building<a>', type: 'point', start: '1857-01-01' },
+      { id: 1608, group: 7, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Washington_Monument">Washington Monument<a>', type: 'point', start: '1854-01-01' },
+      { id: 1609, group: 7, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Chrysler_Building">Chrysler Building<a>', type: 'point', start: '1930-01-01' },
+      { id: 1610, group: 7, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Empire_State_Building">Empire State Building<a>', type: 'point', start: '1931-01-01' },
+      { id: 1611, group: 7, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/World_Trade_Center_(1973%E2%80%932001)">World Trade Center (1973–2001)<a>', type: 'point', start: '1973-01-01' },
+      { id: 1612, group: 7, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Burj_Khalifa">Burj Khalifa<a>', type: 'point', start: '2010-01-01' },
+      { id: 1613, group: 7, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Equitable_Life_Building_(Manhattan)">Equitable Life Building (Manhattan)<a>', type: 'point', start: '1870-01-01' },
+      { id: 1614, group: 7, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/New_York_Tribune_Building">New York Tribune Building<a>', type: 'point', start: '1875-01-01' },
+      { id: 1615, group: 7, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Philadelphia_City_Hall">Philadelphia City Hall<a>', type: 'point', start: '1894-01-01' },
+      { id: 1616, group: 7, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Metropolitan_Life_Insurance_Company_Tower">Metropolitan Life Insurance Company Tower<a>', type: 'point', start: '1909-01-01' },
+      { id: 1617, group: 7, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Great_Mosque_of_Xi%27an">Great Mosque of Xi\'an<a>', type: 'point', start: '742-01-01' },
+
 
       // litterature
       { id: 1700, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Ibn_Tufail">Ibn Tufail<a>', type: 'range', start: '1105-01-01', end: '1185-01-01' },
+      { id: 1701, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/William_Shakespeare">William Shakespeare<a>', type: 'range', start: '1564-01-01', end: '1616-01-01' , className: "red" },
+
+      //humaniste
+      { id: 1750, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Petrarch">Petrarch<a>', type: 'range', start: '1304-01-01', end: '1374-01-01' , className: "red" },
+      { id: 1751, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Poggio_Bracciolini">Poggio Bracciolini<a>', type: 'range', start: '1380-01-01', end: '1459-01-01' , className: "red" },
+      { id: 1752, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Cosimo_de%27_Medici">Cosimo de\' Medici<a>', type: 'range', start: '1389-01-01', end: '1464-01-01' , className: "red" },
+      { id: 1753, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Marsilio_Ficino">Marsilio Ficino<a>', type: 'range', start: '1433-01-01', end: '1499-01-01' , className: "red" },
+      { id: 1754, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Giovanni_Pico_della_Mirandola">Giovanni Pico della Mirandola<a>', type: 'range', start: '1463-01-01', end: '1494-01-01' , className: "red" },
+      { id: 1755, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Niccol%C3%B2_Machiavelli">Nicolas Machiavel<a>', type: 'range', start: '1469-01-01', end: '1527-01-01' , className: "red" },
+      { id: 1756, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Fran%C3%A7ois_Rabelais">François Rabelais<a>', type: 'range', start: '1494-10-01', end: '1553-01-01' , className: "red" },
 
 
       // background
@@ -404,17 +521,41 @@
       { id: 2002, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Abbasid_Caliphate">Abbasid Caliphate<a>', type: 'background', start: '751-01-01', end: '1258-01-01' },
       { id: 2003, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Italian_Renaissance">Italian Renaissance<a>', type: 'background', start: '1450-01-01', end: '1500-01-01', className: "bg-red" },
       { id: 2004, group: 1, content: '<a href="https://en.wikipedia.org/wiki/French_Renaissance">French Renaissance<a>', type: 'background', start: '1500-01-01', end: '1660-01-01', className: "bg-red" },
-      { id: 2005, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Industrial_Revolution">Industrial Revolution<a>', type: 'background', start: '1760-01-01', end: '1830-01-01', className: "bg-red" },
+      { id: 2005, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Industrial_Revolution">Industrial Revolution<a>', type: 'background', start: '1789-01-01', end: '1914-01-01', className: "bg-red" },
+
 
      // videos
-      { id: 2100, group: 10, content: '<a href="https://www.youtube.com/watch?v=er4CMhp6hqc">European conquest of America<a>', type: 'range', start: '1450-01-01', end: '1763-01-01' , className: "red" },
-      { id: 2101, group: 10, content: '<a href="https://www.youtube.com/watch?v=ytE-UFKWuZY">Decolonization in America<a>', type: 'range', start: '1762-01-01', end: '1982-01-01' , className: "red" },
-      { id: 2102, group: 10, content: '<a href="https://www.youtube.com/watch?v=Fbb7nbIUUEM">Colonization of Africa<a>', type: 'range', start: '1830-01-01', end: '1975-01-01' , className: "red" },
-      { id: 2103, group: 10, content: '<a href="https://www.youtube.com/watch?v=MEgIHN63ojU">How Europe Colonized Asia<a>', type: 'range', start: '1498-01-01', end: '1900-01-01' , className: "red" },
-      { id: 2104, group: 10, content: '<a href="https://www.youtube.com/watch?v=Y8V4xMXuU_8">15th Century Europe<a>', type: 'range', start: '1400-01-01', end: '1500-01-01' , className: "red" },
-      { id: 2105, group: 10, content: '<a href="https://www.youtube.com/watch?v=UVesExN_kIc">Italy in the Fifteenth Century<a>', type: 'range', start: '1400-01-01', end: '1500-01-01' , className: "red" },
+      { id: 2100, group: 5, content: '<a href="https://www.youtube.com/watch?v=er4CMhp6hqc">European conquest of America<a>', type: 'range', start: '1450-01-01', end: '1763-01-01' , className: "red" },
+      { id: 2101, group: 5, content: '<a href="https://www.youtube.com/watch?v=ytE-UFKWuZY">Decolonization in America<a>', type: 'range', start: '1762-01-01', end: '1982-01-01' , className: "red" },
+      { id: 2102, group: 5, content: '<a href="https://www.youtube.com/watch?v=Fbb7nbIUUEM">Colonization of Africa<a>', type: 'range', start: '1830-01-01', end: '1975-01-01' , className: "red" },
+      { id: 2103, group: 5, content: '<a href="https://www.youtube.com/watch?v=MEgIHN63ojU">How Europe Colonized Asia<a>', type: 'range', start: '1498-01-01', end: '1900-01-01' , className: "red" },
+      { id: 2104, group: 5, content: '<a href="https://www.youtube.com/watch?v=Y8V4xMXuU_8">15th Century Europe<a>', type: 'range', start: '1400-01-01', end: '1500-01-01' , className: "red" },
+      { id: 2105, group: 5, content: '<a href="https://www.youtube.com/watch?v=UVesExN_kIc">Italy in the Fifteenth Century<a>', type: 'range', start: '1400-01-01', end: '1500-01-01' , className: "red" },
+
+
+      // reign
+      { id: 2200, group: 0, content: '<a href="https://en.wikipedia.org/wiki/Caliphate#Rashidun_Caliphate_(632%E2%80%93661)">Rashidun Caliphate<a>', type: 'range', start: '632-01-01', end: '661-01-01' },
+      { id: 2201, group: 0, content: '<a href="https://en.wikipedia.org/wiki/Caliphate#Umayyad_Caliphate_(661%E2%80%93750)">Umayyad Caliphate<a>', type: 'range', start: '662-01-01', end: '750-01-01' },
+      { id: 2202, group: 0, content: '<a href="https://en.wikipedia.org/wiki/Abbasid_Caliphate">Abbasid Caliphate<a>', type: 'range', start: '751-01-01', end: '1258-01-01' },
+      { id: 2503, group: 0, content: '<a href="https://en.wikipedia.org/wiki/Louis_XIV">Louis XIV<a>', type: 'range', start: '1643-01-01', end: '1715-01-01' ,className: "red" },
+      { id: 2504, group: 0, content: '<a href="https://en.wikipedia.org/wiki/Louis_XV">Louis XV<a>', type: 'range', start: '1715-01-01', end: '1774-01-01' ,className: "red" },
+      { id: 2506, group: 0, content: '<a href="https://en.wikipedia.org/wiki/Louis_XVI">Louis XVI<a>', type: 'range', start: '1774-01-01', end: '1792-01-01' ,className: "red" },
+      { id: 2507, group: 0, content: '<a href="https://en.wikipedia.org/wiki/Louis_XIII">Louis XIII<a>', type: 'range', start: '1610-01-01', end: '1643-01-01' ,className: "red" },
+      { id: 2508, group: 0, content: '<a href="https://en.wikipedia.org/wiki/Henry_IV_of_France">Henry IV of France<a>', type: 'range', start: '1589-01-01', end: '1610-01-01' ,className: "red" },
+      { id: 2509, group: 0, content: '<a href="https://en.wikipedia.org/wiki/Henry_III_of_France">Henry III of France<a>', type: 'range', start: '1574-01-01', end: '1589-01-01' ,className: "red" },
+      { id: 2510, group: 0, content: '<a href="https://en.wikipedia.org/wiki/Charles_IX_of_France">Charles IX of France<a>', type: 'range', start: '1560-01-01', end: '1574-01-01' ,className: "red" },
+      { id: 2512, group: 0, content: '<a href="https://en.wikipedia.org/wiki/Henry_II_of_France">Henry II of France<a>', type: 'range', start: '1547-01-01', end: '1559-01-01' ,className: "red" },
+      { id: 2513, group: 0, content: '<a href="https://en.wikipedia.org/wiki/Francis_I_of_France">Francis I of France<a>', type: 'range', start: '1515-01-01', end: '1547-01-01' ,className: "red" },
+      { id: 2514, group: 0, content: '<a href="https://en.wikipedia.org/wiki/Caliphate#Ottoman_Caliphate_(1517%E2%80%931924)">Ottoman empire<a>', type: 'range', start: '1299-01-01', end: '1924-01-01' },
+      { id: 2515, group: 0, content: '<a href="https://en.wikipedia.org/wiki/Mamluk_Sultanate">Mamluk Sultanate<a>', type: 'range', start: '1250-01-01', end: '1517-01-01' },
+
+      //esoteric
+      { id: 2701, group: 2, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Knights_Templar">Knights Templar<a>', type: 'range', start: '1119-01-01', end: '1312-01-01' , className: "red" },
+      { id: 2702, group: 2, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/History_of_Freemasonry">Freemasonry<a>', type: 'range', start: '1717-01-01', end: '2022-01-01' , className: "red" },
+
 
     ]);
+
 
     // Configuration for the Timeline
     var options = {
