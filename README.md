@@ -1,4 +1,5 @@
 # wiki-chronology
+
 A curated list of wikipedia articles concerning the last 2000 years on the religious and development level. 
 With the aim of knowing who is contemporary with whom, how islamic civilization collapsed,
 and how the knowledge transfer took place between the two civilazation or even at what time dates this or that book
