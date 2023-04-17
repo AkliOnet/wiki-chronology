@@ -142,9 +142,11 @@
 
       // other
       { id: 101, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Harun_al-Rashid">Harun al-Rashid<a>', type: 'range', start: '763-01-01', end: '809-01-01' },
+      { id: 102, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Herod_the_Great">Herod the Great<a>', type: 'range', start: d.setFullYear(-72), end: d.setFullYear(1) , className: 'red'},
+      { id: 103, group: 1, subgroup: 4, content: '<a href="https://fr.wikipedia.org/wiki/D%C3%A8ce">Dèce<a>', type: 'range', start: d.setFullYear(201), end: d.setFullYear(251) , className: 'red'},
+
 
       //events
-      { id: 200, group: 2, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Hijrah">Hijrah<a>', type: 'point', start: '622-07-16' },
       { id: 203, group: 2, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/House_of_Wisdom">House of Wisdom<a>', type: 'range', start: '794-01-01', end: '1258-01-01' },
       { id: 204, group: 2, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/House_of_Knowledge">House of Knowledge<a>', type: 'range', start: '1005-01-01', end: '1170-01-01' },
       { id: 205, group: 2, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Siege_of_Baghdad_(1258)#Aftermath">Siege of Baghdad (1258)<a>', type: 'point', start: '1259-01-01', className: "yellow" },
@@ -271,6 +273,27 @@
       { id: 328, group: 2, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Battle_of_Siffin">Battle of Siffin<a>', type: 'point', start: d.setFullYear(657) },
       { id: 329, group: 2, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Ramadan#History">Ramadan<a>', type: 'point', start: d.setFullYear(624) },
       { id: 330, group: 2, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Isra%27_and_Mi%27raj">Night Journey<a>', type: 'point', start: d.setFullYear(620) },
+      { id: 331, group: 2, subgroup: 4, content: '<a href="#">Debut de la predication<a>', type: 'point', start: d.setFullYear(612) },
+      { id: 332, group: 2, subgroup: 4, content: '<a href="#">Premiére révélation<a>', type: 'point', start: d.setFullYear(610) },
+      { id: 333, group: 2, subgroup: 4, content: '<a href="#">Hégire<a>', type: 'point', start: d.setFullYear(622) },
+      { id: 334, group: 2, subgroup: 4, content: '<a href="#">Conquette de la Mecque<a>', type: 'point', start: d.setFullYear(630) },
+      { id: 335, group: 2, subgroup: 4, content: '<a href="#">Emigration en Abysinie<a>', type: 'point', start: d.setFullYear(615) },
+      { id: 336, group: 2, subgroup: 4, content: '<a href="#">Expédition de Nakhla.<a>', type: 'point', start: d.setFullYear(623) },
+      { id: 337, group: 2, subgroup: 4, content: '<a href="#">Bataille de Badr.<a>', type: 'point', start: d.setFullYear(624) },
+      { id: 338, group: 2, subgroup: 4, content: '<a href="#">Qaynuqâ\' est expulsée.<a>', type: 'point', start: d.setFullYear(624) },
+      { id: 339, group: 2, subgroup: 4, content: '<a href="#">Bataille d\'Uḥud.<a>', type: 'point', start: d.setFullYear(625) },
+      { id: 340, group: 2, subgroup: 4, content: '<a href="#">Naḍîr est expulsée.<a>', type: 'point', start: d.setFullYear(625) },
+      { id: 341, group: 2, subgroup: 4, content: '<a href="#">Siège de Médine.<a>', type: 'point', start: d.setFullYear(627) },
+      { id: 342, group: 2, subgroup: 4, content: '<a href="#">Trêve d\'al-Ḥudaybiyya.<a>', type: 'point', start: d.setFullYear(628) },
+      { id: 343, group: 2, subgroup: 4, content: '<a href="#">Prise des oasis.<a>', type: 'point', start: d.setFullYear(628) },
+      { id: 344, group: 2, subgroup: 4, content: '<a href="#">Bataille de Ḥunayn.<a>', type: 'point', start: d.setFullYear(630) },
+      { id: 345, group: 2, subgroup: 4, content: '<a href="#">Adieu.<a>', type: 'point', start: d.setFullYear(632) },
+      { id: 346, group: 2, subgroup: 4, content: '<a href="#">Guerres de la ridda <a>', type: 'point', start: d.setFullYear(633) },
+      { id: 347, group: 3, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Muhammad_ibn_Musa_al-Khwarizmi">Book on Calculation by Completion and Balancing<a>', type: 'point', start: d.setFullYear(823) },
+      { id: 348, group: 3, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Muhammad_ibn_Musa_al-Khwarizmi">Book of Indian computation<a>', type: 'point', start: d.setFullYear(820) },
+      { id: 349, group: 3, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Muhammad_ibn_Musa_al-Khwarizmi">Book of the Description of the Earth<a>', type: 'point', start: d.setFullYear(833) },
+
+
 
 
       // hadith collectors
@@ -297,6 +320,7 @@
       { id: 460, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Ibn_al-Khatib">Ibn al-Khatib<a>', type: 'range', start: '1313-01-01', end: '1374-01-01' },
       { id: 461, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Ibn_Sa%27d">Ibn Sa\'d<a>', type: 'range', start: '784-01-01', end: '845-01-01' },
       { id: 462, group: 1, subgroup: 4, content: '<a href="https://de.wikipedia.org/wiki/%CA%BFUmar_ibn_Schabba">Umar ibn Shabba<a>', type: 'range', start: '800-01-01', end: '877-01-01' },
+      { id: 463, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Flavius_Jos%C3%A8phe">Flavius Josèphe<a>', type: 'range', start: d.setFullYear(37), end: d.setFullYear(100), className: 'yellow'},
 
 
 
@@ -333,6 +357,8 @@
       { id: 529, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Ja%27far_al-Sadiq">Ja\'far al-Sadiq<a>', type: 'range', start: '702-01-01', end: '765-01-01' },
       { id: 530, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Ibn_Sirin">Ibn Sirin<a>', type: 'range', start: '680-01-01', end: '729-01-01' },// premier a diviser les gens seulon qu'il suive la tradition ou l'innovation .voir histoire de l'islam de sabrina mervin
       { id: 531, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Al-Suyuti">al-Suyuti<a>', type: 'range', start: '1445-01-01', end: '1505-01-01' },
+      { id: 532, group: 1, subgroup: 4, content: '<a href="https://fr.wikipedia.org/wiki/Jacques_de_Saroug">Jacques de Saroug<a>', type: 'range', start: '451-01-01', end: '521-01-01' },
+      { id: 533, group: 1, subgroup: 4, content: '<a href="https://fr.wikipedia.org/wiki/Zacharie_le_Rh%C3%A9teur">Zacharie le Rhéteur<a>', type: 'range', start: '465-01-01', end: '550-01-01' },
 
 
 
@@ -511,13 +537,39 @@
       { id: 1025, group: 3, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Cantino_planisphere">Cantino planisphere<a>', type: 'point', start: '1502-01-01', className: 'red' },
       { id: 1026, group: 4, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Talmud">Talmud<a>', type: 'range', start: '200-01-01', end: '500-01-01', className: 'yellow' },
       { id: 1027, group: 4, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Zohar">Zohar<a>', type: 'point', start: '1286-01-01', end: '500-01-01', className: 'yellow' },
-      { id: 1028, group: 4, subgroup: 4, content: '<a href="https://fr.wikipedia.org/wiki/Apocalypse_d%27Abraham">Apocalypse d\'Abraham<a>', type: 'point', start: '100-01-01', end: '500-01-01', className: 'yellow' },
-      { id: 1029, group: 4, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Book_of_Revelation">Book of Revelation<a>', type: 'point', start: '100-01-01', className: 'yellow' },
+      { id: 1028, group: 4, subgroup: 4, content: '<a href="https://fr.wikipedia.org/wiki/Apocalypse_d%27Abraham">Apocalypse d\'Abraham<a>', type: 'point', start: '100-01-01', end: '500-01-01', className: 'red' },
+      { id: 1029, group: 4, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Book_of_Revelation">Book of Revelation<a>', type: 'point', start: d.setFullYear(88), className: 'red' },
       { id: 1030, group: 4, subgroup: 4, content: '<a href="https://fr.wikipedia.org/wiki/Chronique_de_Tabari">Histoire des prophètes et des rois<a>', type: 'point', start: '915-01-01', className: 'yellow' },
       { id: 1031, group: 4, subgroup: 4, content: '<a href="https://fr.wikipedia.org/wiki/Ibn_Kathir">Les histoires des prophetes Ibn Kathir<a>', type: 'point', start: '1385-01-01' },
       { id: 1032, group: 4, subgroup: 4, content: '<a href="https://www.altafsir.com/LoveInQuranIntroEn.asp">Love in the Holy Quran<a>', type: 'point', start: '2011-01-01' },
       { id: 1033, group: 4, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Ibn_Sa%27d">Kitāb aṭ-Tabaqāt al-Kabīr<a>', type: 'point', start: '844-01-01' },
       { id: 1034, group: 4, subgroup: 4, content: '<a href="https://archive.org/details/as-suyuti-le-parfait-manuel-des-sciences-coraniques-al-itqan-fi-ulum-al-quran/page/n3/mode/2up">As Suyuti - Al Itqān Fī ʿulūm Al Qurʾān<a>', type: 'point', start: '1489-01-01' },
+      { id: 1035, group: 4, subgroup: 4, content: '<a href="https://fr.wikipedia.org/wiki/%C3%89vangile_de_Thomas">Évangile de Thomas<a>', type: 'point', start: d.setFullYear(100)  },
+      { id: 1036, group: 4, subgroup: 4, content: '<a href="https://fr.wikipedia.org/wiki/%C3%89vangile_de_Pierre">Évangile de Pierre<a>', type: 'point', start: d.setFullYear(150)  },
+      { id: 1037, group: 4, subgroup: 4, content: '<a href="https://fr.wikipedia.org/wiki/%C3%89vangile_de_Judas">Évangile de Judas<a>', type: 'point', start: d.setFullYear(170)  },
+      { id: 1038, group: 4, subgroup: 4, content: '<a href="https://fr.wikipedia.org/wiki/Actes_de_Paul_et_Th%C3%A8cle">Actes de Paul et Thècle<a>', type: 'point', start: d.setFullYear(200)  },
+      { id: 1039, group: 4, subgroup: 4, content: '<a href="https://fr.wikipedia.org/wiki/%C3%89vangiles_de_l%27enfance">Évangiles de l:\'enfance<a>', type: 'point', start: d.setFullYear(200)  },
+      { id: 1040, group: 4, subgroup: 4, content: '<a href="https://fr.wikipedia.org/wiki/%C3%89vangile_de_Nicod%C3%A8me">Évangile de Nicodème<a>', type: 'point', start: d.setFullYear(300)  },
+      { id: 1041, group: 4, subgroup: 4, content: '<a href="https://fr.wikipedia.org/wiki/Actes_de_Pilate">Actes de Pilate<a>', type: 'point', start: d.setFullYear(300)  },
+      { id: 1042, group: 4, subgroup: 4, content: '<a href="https://fr.wikipedia.org/wiki/Apocalypse_de_Pierre">Apocalypse de Pierre<a>', type: 'point', start: d.setFullYear(300)  },
+      { id: 1043, group: 4, subgroup: 4, content: '<a href="https://fr.wikipedia.org/wiki/Apocalypse_de_Paul">Apocalypse de Paul<a>', type: 'point', start: d.setFullYear(400)  },
+      { id: 1044, group: 4, subgroup: 4, content: '<a href="https://fr.wikipedia.org/wiki/%C3%89vangile_selon_Philippe">Évangile selon Philippe<a>', type: 'point', start: d.setFullYear(350)  },
+      { id: 1045, group: 4, subgroup: 4, content: '<a href="https://fr.wikipedia.org/wiki/Apocalypse_d%27Esdras">Apocalypse d\'Esdras<a>', type: 'point', start: d.setFullYear(400)  },
+      { id: 1046, group: 4, subgroup: 4, content: '<a href="https://fr.wikipedia.org/wiki/%C3%89vangile_des_%C3%89bionites">Évangile des Ébionites<a>', type: 'point', start: d.setFullYear(175)  },
+      { id: 1047, group: 4, subgroup: 4, content: '<a href="https://fr.wikipedia.org/wiki/Ascension_d%27Isa%C3%AFe">Ascension d\'Isaïe<a>', type: 'point', start: d.setFullYear(125)  },
+      { id: 1048, group: 4, subgroup: 4, content: '<a href="https://fr.wikipedia.org/wiki/%C3%89vangile_de_l%27enfance_selon_Thomas">Évangile de l\'enfance selon Thomas<a>', type: 'point', start: d.setFullYear(150)  },
+      { id: 1049, group: 4, subgroup: 4, content: '<a href="https://fr.wikipedia.org/wiki/Livre_d%27H%C3%A9noch">Livre d\'Hénoch<a>', type: 'point', start: d.setFullYear(-150)  },
+      { id: 1050, group: 4, subgroup: 4, content: '<a href="https://fr.wikipedia.org/wiki/Le_Prot%C3%A9vangile_de_Jacques">Le Protévangile de Jacques<a>', type: 'point', start: d.setFullYear(175)  },
+      { id: 1052, group: 4, subgroup: 4, content: '<a href="https://fr.wikipedia.org/wiki/%C3%89vangile_de_la_v%C3%A9rit%C3%A9">Évangile de la vérité<a>', type: 'point', start: d.setFullYear(150)  },
+      { id: 1053, group: 4, subgroup: 4, content: '<a href="https://fr.wikipedia.org/wiki/2_H%C3%A9noch">Le Livre des Secrets d\'Hénoch<a>', type: 'point', start: d.setFullYear(0)  },
+      { id: 1055, group: 4, subgroup: 4, content: '<a href="https://fr.wikipedia.org/wiki/Les_Psaumes_de_Salomon">Les Psaumes de Salomon<a>', type: 'point', start: d.setFullYear(50)  },
+      { id: 1069, group: 4, subgroup: 4, content: '<a href="https://fr.wikipedia.org/wiki/%C3%89vangile_de_Judas">Évangile de Judas<a>', type: 'point', start: d.setFullYear(200)  },
+      { id: 1071, group: 4, subgroup: 4, content: '<a href="https://fr.wikipedia.org/wiki/Les_Testaments_des_Douze_Patriarches">Les Testaments des Douze Patriarches<a>', type: 'point', start: d.setFullYear(-100)  },
+      { id: 1072, group: 4, subgroup: 4, content: '<a href="https://fr.wikipedia.org/wiki/%C3%89vangile_de_Marie">Évangile de Marie<a>', type: 'point', start: d.setFullYear(150)  },
+      { id: 1073, group: 4, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Mandaean_Book_of_John">Mandaean Book of John<a>', type: 'point', start: d.setFullYear(50)  },
+
+
+
 
 
           
@@ -595,6 +647,9 @@
       { id: 1659, group: 7, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Mosque_of_the_Three_Doors">Mosque of the Three Doors<a>', type: 'point', start: '866-01-01', end: '1339-01-01' },
       { id: 1660, group: 7, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Qalawun_complex">Qalawun complex<a>', type: 'point', start: '1285-01-01', end: '1339-01-01' },
       { id: 1661, group: 7, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Maristan_of_al-Mu%27ayyad">Maristan of al-Mu\'ayyad<a>', type: 'point', start: '1420-01-01', end: '1339-01-01' },
+      { id: 1662, group: 7, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Aqueduct_of_Segovia">Aqueduct of Segovia<a>', type: 'point', start: '112-01-01'},
+      { id: 1663, group: 7, subgroup: 4, content: '<a href="https://fr.wikipedia.org/wiki/Pont_d%27Alc%C3%A1ntara">Pont d\'Alcántara<a>', type: 'point', start: '106-01-01'},
+
 
 
 
@@ -660,7 +715,16 @@
       { id: 2516, group: 0, content: '<a href="https://en.wikipedia.org/wiki/Roman_Empire">Roman Empire<a>', type: 'range', start: d.setFullYear(-27), end: d.setFullYear(395), className: "red" },
       { id: 2517, group: 0, content: '<a href="https://en.wikipedia.org/wiki/Byzantine_Empire">Byzantine Empire<a>', type: 'range', start: '395-01-01', end: '1453-01-01', className: "red" },
       { id: 2518, group: 0, content: '<a href="https://en.wikipedia.org/wiki/Western_Roman_Empire">Western Roman Empire<a>', type: 'range', start: '395-01-01', end: '476-01-01', className: "red" },
-
+      { id: 2519, group: 0, content: '<a href="https://en.wikipedia.org/wiki/Mycenaean_Greece">Mycenaean Greece<a>', type: 'range', start:  d.setFullYear(-1750), end:  d.setFullYear(-1050), className: "red" },
+      { id: 2520, group: 0, content: '<a href="https://en.wikipedia.org/wiki/Ancient_Greece">Ancient Greece<a>', type: 'range', start:  d.setFullYear(-800), end:  d.setFullYear(-146), className: "red" },
+      { id: 2521, group: 0, content: '<a href="https://en.wikipedia.org/wiki/Roman_Kingdom">Roman Kingdom<a>', type: 'range', start:  d.setFullYear(-753), end:  d.setFullYear(-509), className: "red" },
+      { id: 2522, group: 0, content: '<a href="https://en.wikipedia.org/wiki/Roman_Republic">Roman Republic<a>', type: 'range', start:  d.setFullYear(-509), end:  d.setFullYear(-27), className: "red" },
+      { id: 2524, group: 0, content: '<a href="https://en.wikipedia.org/wiki/Babylonia">Babylonia<a>', type: 'range', start:  d.setFullYear(-2000), end:  d.setFullYear(-539) },
+      { id: 2525, group: 0, content: '<a href="https://en.wikipedia.org/wiki/Achaemenid_Empire">Achaemenid Empire<a>', type: 'range', start:  d.setFullYear(-550), end:  d.setFullYear(-330)},
+      { id: 2526, group: 0, content: '<a href="https://en.wikipedia.org/wiki/Minoan_civilization">Minoan civilization<a>', type: 'range', start:  d.setFullYear(-3500), end:  d.setFullYear(-1100),className: "red" },
+      { id: 2527, group: 0, content: '<a href="https://fr.wikipedia.org/wiki/Sumer">Sumer<a>', type: 'range', start:  d.setFullYear(-4000), end:  d.setFullYear(-1900)},
+      { id: 2528, group: 0, content: '<a href="https://en.wikipedia.org/wiki/Ancient_Egypt">Ancient Egypt<a>', type: 'range', start:  d.setFullYear(-3000), end:  d.setFullYear(-332)},
+      { id: 2529, group: 0, content: '<a href="https://en.wikipedia.org/wiki/Alexander_the_Great">Alexander the Great<a>', type: 'range', start:  d.setFullYear(-336), end:  d.setFullYear(-323),className: "red" },
 
 
       //esoteric
@@ -679,14 +743,15 @@
       { id: 2806, group: 6, subgroup: 4, content: '<a href="https://books.google.fr/books?id=Qj5jAAAAcAAJ&pg=PA75&lpg=PA75&dq=%22presque+tous+les+hommes+savent+lire,+%C3%A9crire+et+un+peu+compter%22&source=bl&ots=cy8XsbD1_p&sig=ACfU3U1Zh_ZVfUt9low7BPmsc1uymYNyFw&hl=fr&sa=X&ved=2ahUKEwin35qr8bX9AhWnXqQEHXS_BhIQ6AF6BAgDEAM#v=onepage&q=%22presque%20tous%20les%20hommes%20savent%20lire%2C%20%C3%A9crire%20et%20un%20peu%20compter%22&f=false">Voyage dans la régence d\'Alger<a>', type: 'point', start: '1833-01-01', end: '1881-01-01', className: "red" },
       { id: 2807, group: 6, subgroup: 4, content: '<a href="https://gallica.bnf.fr/ark:/12148/cb32780022t/date">Gazette<a>', type: 'range', start: '1631-01-01', end: '1761-01-01', className: "red" },
       { id: 2808, group: 6, subgroup: 4, content: '<a href="https://fr.wikipedia.org/wiki/L%27Or_de_Paris">L\'Or de Paris<a>', type: 'point', start: '1834-01-01', end: '1761-01-01' },
+      { id: 2809, group: 6, subgroup: 4, content: '<a href="https://www.persee.fr/doc/abpo_0003-391x_1966_num_73_4_2381#:~:text=ses%20les%20sept%20jeunes%20Saints,pour%20garder%20les%20finances%20royales.">Les sept saints dormants d\'Ephèse<a>', type: 'point', start: '250-01-01'},
+      { id: 2810, group: 6, subgroup: 4, content: '<a href="https://fr.m.wikisource.org/wiki/La_L%C3%A9gende_dor%C3%A9e/Les_Sept_Dormants.">La Légende dorée/Les Sept Dormants<a>', type: 'point', start: '250-01-01'},
+      { id: 2811, group: 6, subgroup: 4, content: '<a href="https://ojs.uclouvain.be/index.php/babelao/article/view/19793/18413">Un nouveau témoin de l’Histoire des Sept Dormants d’Ephèse<a>', type: 'point', start: '250-01-01'},
 
 
       
       // bible
 
 
-      { id: 5000, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Adam">Adam</a>', type: 'range', start: d.setFullYear(0000), end: d.setFullYear(-0150) },
-      { id: 5001, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Eve">Eve</a>', type: 'range', start: d.setFullYear(0000), end: d.setFullYear(-0150) },
       { id: 5002, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Noah">Noah</a>', type: 'range', start: d.setFullYear(-0156), end: d.setFullYear(-0250) },
       { id: 5003, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Abraham">Abraham</a>', type: 'range', start: d.setFullYear(-1812), end: d.setFullYear(-1637) },
       { id: 5004, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Isaac">Isaac</a>', type: 'range', start: d.setFullYear(-1802), end: d.setFullYear(-1677) },
@@ -899,7 +964,7 @@
   <a href="https://www.radiofrance.fr/s3/cruiser-production/2012/10/cd1f0fad-2370-11e2-a7b7-782bcb76618d/860_carte_saint_paul_gen_color_h1000_72pp.webp">carte des voyages de paul</a><br>
   <a href="https://i.imgur.com/qAfnHUL.jpg">early church chonology</a><br>
   <a href="https://fmcworld.net/old-testament-maps/">Old Testament Maps</a><br>
-
+  <a href="http://explorethemed.com/christian.asp">The Rise of Christianity</a><br>
  
 
 
