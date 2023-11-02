@@ -42,6 +42,9 @@
       z-index: 1000;
       background: white;
     }
+    .intro{
+      width: 50%;
+    }
   </style>
 
   <script src="https://visjs.github.io/vis-timeline/docs/js/jquery.min.js"></script>
@@ -54,47 +57,20 @@
 
 <body>
 
-  <table id="v-option">
-    <thead>
-      <tr>
-        <th>Option</th>
-        <th>Status</th>
-        <th>Toggle</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>familly visibility</td>
-        <td id="subgVis1">true</td>
-        <td><button onclick="toggleSubgroupVisibility('1')">Toggle</button></td>
-      </tr>
-      <tr>
-        <td>sahabas visibility</td>
-        <td id="subgVis2">true</td>
-        <td><button onclick="toggleSubgroupVisibility('2')">Toggle</button></td>
-      </tr>
-      <tr>
-        <td>religious scholars visibility</td>
-        <td><button onclick="toggleSubgroupVisibility('3')">Toggle</button></td>
-      </tr>
-      <tr>
-        <td>scientists visibility</td>
-        <td id="subgVis4">true</td>
-        <td><button onclick="toggleSubgroupVisibility('4')">Toggle</button></td>
-      </tr>
-      <tr>
-        <td>other visibility</td>
-        <td id="subgVis5">true</td>
-        <td><button onclick="toggleSubgroupVisibility('5')">Toggle</button></td>
-      </tr>
-      <tr>
-        <td>Geographers visibility</td>
-        <td id="subgVis6">true</td>
-        <td><button onclick="toggleSubgroupVisibility('6')">Toggle</button></td>
-      </tr>
-    </tbody>
-  </table>
-  <button onclick="showAllGroups()">Restore Hidden</button>
+
+  <p class="intro">J'avais créé cette ligne du temps pour moi, car je ne trouvais nulle part une timeline permettant d'avoir une vision globale de l'histoire et surtout des faits historiques qui m'intéressent (science et religion) entre particulièrement trois civilations. Le but était de répondre à un certain nombre de questions historiques telles que :
+<br>
+<ul>
+  <li>Apprécier les distances de temps sur une timeline entre, par exemple, les prophètes juifs avant Jésus, Jésus, Mohammed et nous.</li>
+  <li>Comprendre à quel moment la civilisation islamique a sombré et n'a plus produit de scientifiques, etc.</li>
+  <li>Voir qui est contemporain de qui.</li>
+  <li>Voir la distribution dans le temps des évangiles apocryphes, ou encore l'espacement dans le temps des événements au temps du prophète de l'islam.</li>
+  <li>Placer dans le temps les grands événements tels que la conquête de l'Amérique. </li>
+  <li>Pouvoir se faire une idée réelle de l'accélération de la science et du développement.</li> 
+</ul>
+    Il manque encore beaucoup de choses et il y a quelques erreurs de colorisation et de date, mais cela donne déjà une idée du passé. je l'améliorerai ...
+    Des ngrams, des cartes et des rapports historiques sont disponibles en bas de page. </p>
+
   <h2><span id="counter"></span></h2>
 
   <div id="visualization"></div>
@@ -102,7 +78,7 @@
   <script type="text/javascript">
     // DOM element where the Timeline will be attached
     var container = document.getElementById('visualization');
-
+    
     // create groups
     var groups = new vis.DataSet([
       { id: 0, content: 'reigns' },
@@ -119,7 +95,7 @@
     d = new Date();
     // Create a DataSet (allows two way data-binding)
     var items = new vis.DataSet([
-      //sahabas
+      //prophets and disciples
       { id: 1, group: 1, subgroup: 1, content: '<a href="https://en.wikipedia.org/wiki/Muhammad">Muhammad<a>', type: 'range', start: '570-01-01', end: '632-01-01' },
       { id: 2, group: 1, subgroup: 2, content: '<a href="https://en.wikipedia.org/wiki/Abd_Allah_ibn_Ja%27far">Abd Allah ibn Ja\'far<a>', type: 'range', start: '624-01-01', end: '700-01-01' },
       { id: 3, group: 1, subgroup: 2, content: '<a href="https://en.wikipedia.org/wiki/Abd_al-Rahman_ibn_Abi_Bakr">Abd al-Rahman ibn Abi Bakr<a>', type: 'range', start: '599-01-01', end: '675-01-01' },
@@ -137,6 +113,7 @@
       { id: 17, group: 1, subgroup: 2, content: '<a href="https://fr.wikipedia.org/wiki/Anas_ibn_Malik">Anas ibn Malik<a>', type: 'range', start: '612-01-01', end: '713-01-01' },
       { id: 19, group: 1, subgroup: 2, content: '<a href="https://en.wikipedia.org/wiki/Khalid_ibn_al-Walid">Khalid ibn al-Walid<a>', type: 'range', start: '592-01-01', end: '642-01-01' },
       { id: 20, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Husayn_ibn_Ali">Husayn ibn Ali<a>', type: 'range', start: '626-01-01', end: '680-01-01' },
+      { id: 21, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Historical_Jesus">Jesus / Hissa<a>', type: 'range', start: d.setFullYear(-4), end: d.setFullYear(33) },
 
 
 
@@ -226,7 +203,7 @@
       { id: 280, group: 3, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Telephone">Telephone<a>', type: 'point', start: '1876-01-01', end: '1993-01-01', className: "red" },
       { id: 281, group: 2, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/List_of_world%27s_fairs">Exhibitions<a>', type: 'range', start: '1791-01-01', end: '2022-01-01', className: "red" },
       { id: 282, group: 3, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Television">Television<a>', type: 'range', start: '1884-01-01', end: '1937-01-01', className: "red" },
-      { id: 283, group: 3, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Computer">Computer<a>', type: 'range', start: '1943-01-01', end: '1971-01-01', className: "red" },
+      { id: 283, group: 3, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Computer">Computer<a>', type: 'range', start: '1937-01-01', end: '1971-01-01', className: "red" },
       { id: 284, group: 3, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Mohamed_M._Atalla">MOS transistor<a>', type: 'point', start: '1959-01-01', end: '2009-01-01' },
       { id: 285, group: 3, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Daguerreotype">Photographie<a>', type: 'point', start: '1840-01-01', end: '2009-01-01', className: "red" },
       { id: 286, group: 3, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Rapid_transit">Rapid transit<a>', type: 'point', start: '1863-01-01', end: '2009-01-01', className: "red" },
@@ -266,7 +243,7 @@
       { id: 320, group: 2, subgroup: 4, content: '<a href="#">Israel in Egypte ?<a>', type: 'range', start: d.setFullYear(-1600), end: d.setFullYear(-1203), className: "yellow" },
       { id: 321, group: 2, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Tertullian">Trinity<a>', type: 'point', start: d.setFullYear(213), className: "red" },
       { id: 322, group: 2, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Council_of_Laodicea">Sunday as the day of rest<a>', type: 'point', start: d.setFullYear(363), className: "red" },
-      { id: 324, group: 2, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Paul_the_Apostle">Jesus is dead for our sins<a>', type: 'point', start: d.setFullYear(56), className: "red" },
+      { id: 324, group: 2, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Paul_the_Apostle">Jesus is dead for our sins<a>', type: 'point', start: d.setFullYear(56), className: "yellow" },
       { id: 325, group: 2, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/First_Council_of_Nicaea">Canonisation of christianity<a>', type: 'point', start: d.setFullYear(325), className: "red" },
       { id: 326, group: 2, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Councils_of_Carthage">Canonisation of the bible<a>', type: 'point', start: d.setFullYear(397), className: "red" },
       { id: 327, group: 2, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Battle_of_the_Camel">Battle of the Camel<a>', type: 'point', start: d.setFullYear(656) },
@@ -293,6 +270,9 @@
       { id: 348, group: 3, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Muhammad_ibn_Musa_al-Khwarizmi">Book of Indian computation<a>', type: 'point', start: d.setFullYear(820) },
       { id: 349, group: 3, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Muhammad_ibn_Musa_al-Khwarizmi">Book of the Description of the Earth<a>', type: 'point', start: d.setFullYear(833) },
       { id: 350, group: 2, subgroup: 4, content: '<a href="https://answersingenesis.org/noahs-ark/noahs-ark-found/is-the-wood-recently-found-on-mt-ararat-from-the-ark/">Deluge<a>', type: 'point', start: d.setFullYear(-2500) },
+      { id: 351, group: 2, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Restorationism">Restorationism<a>', type: 'range', start: d.setFullYear(1790), end: d.setFullYear(2023) ,className:"red"},
+      { id: 352, group: 2, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Rashad_Khalifa">Discovery of the Quran mathematics<a>', type: 'point', start: d.setFullYear(1973), end: d.setFullYear(2023) ,className:"red"},
+      { id: 353, group: 2, subgroup: 4, content: '<a href="https://fr.wikipedia.org/wiki/Magna_Carta">Magna Carta<a>', type: 'point', start: d.setFullYear(1215) ,className:"red"},
 
 
 
@@ -376,6 +356,7 @@
       { id: 548, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Tertullian">Tertullien</a>', type: 'range', start: d.setFullYear(155), end: d.setFullYear(240) },
       { id: 549, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Melito_of_Sardis">Méliton de Sardes</a>', type: 'range', start: d.setFullYear(160), end: d.setFullYear(170) },
       { id: 550, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Hippolytus_of_Rome">Hippolyte de Rome</a>', type: 'range', start: d.setFullYear(170), end: d.setFullYear(236) },
+      { id: 551, group: 1, subgroup: 4, content: '<a href="https://fr.wikipedia.org/wiki/Muqatil_ibn_Sulayman">Muqatil ibn Sulayman</a>', type: 'range', start: d.setFullYear(699), end: d.setFullYear(767) },
 
 
 
@@ -452,6 +433,7 @@
       { id: 753, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Isaac_Newton">Isaac Newton<a>', type: 'range', start: '1643-01-01', end: '1727-01-01', className: "red" },
       { id: 754, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Erasmus">Erasmus<a>', type: 'range', start: '1466-01-01', end: '1536-01-01', className: "red" },
       { id: 755, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Thomas_Edison">Thomas Edison<a>', type: 'range', start: '1847-01-01', end: '1931-01-01', className: "red" },
+      { id: 756, group: 1, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Rashad_Khalifa">Rashad Khalifa<a>', type: 'range', start: '1935-01-01', end: '1990-01-01'},
 
 
 
@@ -588,11 +570,14 @@
       { id: 1075, group: 4, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Second_Treatise_of_the_Great_Seth">Second Treatise of the Great Seth<a>', type: 'point', start: d.setFullYear(200)  },
       { id: 1076, group: 4, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Gospel_of_Mark">Gospel of Mark<a>', type: 'point', start: d.setFullYear(70)  },
       { id: 1077, group: 4, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Gospel_of_Luke">Gospel of Luke<a>', type: 'point', start: d.setFullYear(85)  },
-      { id: 1078, group: 4, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Gospel_of_Matthew">Gospel of Luke<a>', type: 'point', start: d.setFullYear(95)  },
+      { id: 1078, group: 4, subgroup: 4, content: '<a href="https://en.wikipedia.org/Gospel_of_Matthew">Gospel of Matthew<a>', type: 'point', start: d.setFullYear(95)  },
       { id: 1079, group: 4, subgroup: 4, content: '<a href="https://en.wikipedia.org/wiki/Gospel_of_John">Gospel of John<a>', type: 'point', start: d.setFullYear(100)  },
+      { id: 1080, group: 4, subgroup: 4, content: '<a href="https://archive.org/details/secrets-within-the-order-of-the-quran-by-as-suyuti-1/page/n9/mode/2up">Secrets Within The Order Of The Quran<a>', type: 'point', start: d.setFullYear(1488)  },
+     { id: 1081, group: 4, subgroup: 4, content: '<a href="https://archive.org/details/al-jalalain-eng-1/page/2/mode/2up">Tafsir al-Suyuti Mahalli<a>', type: 'point', start: d.setFullYear(1460)  },
+      { id: 1082, group: 4, subgroup: 4, content: '<a href="https://iiit.org/wp-content/uploads/A-Thematic-Commentary-on-the-Quran.pdf">A THEMATIC COMMENTARY ON THE QUR’AN<a>', type: 'point', start: d.setFullYear(1995)  },
+      { id: 1083, group: 4, subgroup: 4, content: '<a href="https://fr.wikipedia.org/wiki/Muqatil_ibn_Sulayman#Ex%C3%A9g%C3%A8se_coranique">Tafsīr Muqātil<a>', type: 'point', start: d.setFullYear(750)  },
 
-
-
+        
 
           
       //translators
@@ -716,8 +701,8 @@
       { id: 2112, group: 5, content: '<a href="https://archive.org/details/palestine-1896">Palestine<a>', type: 'point', start: '1896-01-01', end: '1981-01-01', className: "red" },
       { id: 2113, group: 5, content: '<a href="https://www.youtube.com/watch?v=aFHH3RpOmKk">Constantine and Christianity<a>', type: 'range', start: '150-01-01', end: '325-01-01', className: "red" },
       { id: 2114, group: 5, content: '<a href="https://www.youtube.com/watch?v=krR5IEkNy80">La grande discorde<a>', type: 'range', start: '632-01-01', end: '657-01-01'},
-
-        
+      { id: 2115, group: 5, content: '<a href="https://www.youtube.com/watch?v=mhrNU5U42mI">Après Jésus. L\'invention du christianisme<a>', type: 'range', start: d.setFullYear(33), end: '251-01-01' , className:"red"},
+       
 
       // reign
       { id: 2200, group: 0, content: '<a href="https://en.wikipedia.org/wiki/Caliphate#Rashidun_Caliphate_(632%E2%80%93661)">Rashidun Caliphate<a>', type: 'range', start: '632-01-01', end: '661-01-01' },
@@ -770,95 +755,96 @@
       { id: 2809, group: 6, subgroup: 4, content: '<a href="https://www.persee.fr/doc/abpo_0003-391x_1966_num_73_4_2381#:~:text=ses%20les%20sept%20jeunes%20Saints,pour%20garder%20les%20finances%20royales.">Les sept saints dormants d\'Ephèse<a>', type: 'point', start: '250-01-01'},
       { id: 2810, group: 6, subgroup: 4, content: '<a href="https://fr.m.wikisource.org/wiki/La_L%C3%A9gende_dor%C3%A9e/Les_Sept_Dormants.">La Légende dorée/Les Sept Dormants<a>', type: 'point', start: '250-01-01'},
       { id: 2811, group: 6, subgroup: 4, content: '<a href="https://ojs.uclouvain.be/index.php/babelao/article/view/19793/18413">Un nouveau témoin de l’Histoire des Sept Dormants d’Ephèse<a>', type: 'point', start: '250-01-01'},
+      { id: 2812, group: 6, subgroup: 4, content: '<a href="https://gallica.bnf.fr/ark:/12148/bpt6k109735r/f7.item.r=andr%C3%A9%20du%20Ryer.zoom">L\'Alcoran de Mahomet <a>', type: 'point', start: '1647-01-01'},
 
 
       
       // bible
 
 
-      { id: 5002, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Noah">Noah</a>', type: 'range', start: d.setFullYear(-0156), end: d.setFullYear(-0250) },
-      { id: 5003, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Abraham">Abraham</a>', type: 'range', start: d.setFullYear(-1812), end: d.setFullYear(-1637) },
-      { id: 5004, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Isaac">Isaac</a>', type: 'range', start: d.setFullYear(-1802), end: d.setFullYear(-1677) },
-      { id: 5005, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Jacob">Jacob</a>', type: 'range', start: d.setFullYear(-1767), end: d.setFullYear(-1647) },
-      { id: 5006, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Joseph_(son_of_Jacob)">Joseph</a>', type: 'range', start: d.setFullYear(-1711), end: d.setFullYear(-1601) },
-      { id: 5007, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Moses">Moses</a>', type: 'range', start: d.setFullYear(-1250), end: d.setFullYear(-1130) },
-      { id: 5009, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Joshua">Joshua</a>', type: 'range', start: d.setFullYear(-1355), end: d.setFullYear(-1245) },
-      { id: 5010, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Samuel">Samuel</a>', type: 'range', start: d.setFullYear(-1100), end: d.setFullYear(-1010) },
-      { id: 5012, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Solomon">Solomon</a>', type: 'range', start: d.setFullYear(-970), end: d.setFullYear(-931) },
-      { id: 5013, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Elijah">Elijah</a>', type: 'range', start: d.setFullYear(-874), end: d.setFullYear(-800) },
-      { id: 5014, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Elisha">Elisha</a>', type: 'range', start: d.setFullYear(-848), end: d.setFullYear(-797) },
-      { id: 5015, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Jonah">Jonah</a>', type: 'range', start: d.setFullYear(-740), end: d.setFullYear(-700) },
-      { id: 5016, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Isaiah">Isaiah</a>', type: 'range', start: d.setFullYear(-740), end: d.setFullYear(-700) },
-      { id: 5018, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Ezekiel">Ezekiel</a>', type: 'range', start: d.setFullYear(-623), end: d.setFullYear(-571) },
-      { id: 5019, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Daniel">Daniel</a>', type: 'range', start: d.setFullYear(-605), end: d.setFullYear(-535) },
-      { id: 5020, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Hosea">Hosea</a>', type: 'range', start: d.setFullYear(-745), end: d.setFullYear(-725) },
-      { id: 5021, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Joel_(prophet)">Joel</a>', type: 'range', start: d.setFullYear(-835), end: d.setFullYear(-796) },
-      { id: 5023, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Obadiah">Obadiah</a>', type: 'range', start: d.setFullYear(-850), end: d.setFullYear(-800) },
-      { id: 5025, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Micah">Micah</a>', type: 'range', start: d.setFullYear(-740), end: d.setFullYear(-700) },
-      { id: 5026, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Nahum">Nahum</a>', type: 'range', start: d.setFullYear(-645), end: d.setFullYear(-605) },
-      { id: 5027, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Habakkuk">Habakkuk</a>', type: 'range', start: d.setFullYear(-605), end: d.setFullYear(-550) },
-      { id: 5028, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Zephaniah">Zephaniah</a>', type: 'range', start: d.setFullYear(-630), end: d.setFullYear(-620) },
-      { id: 5029, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Haggai">Haggai</a>', type: 'range', start: d.setFullYear(-520), end: d.setFullYear(-480) },
-      { id: 5030, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Zechariah_(Hebrew_prophet)">Zechariah</a>', type: 'range', start: d.setFullYear(-480), end: d.setFullYear(-420) },
-      { id: 5031, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Malachi">Malachi</a>', type: 'range', start: d.setFullYear(-400), end: d.setFullYear(-350) },
-      { id: 5032, group: 1, content: '<a href="https://en.wikipedia.org/wiki/John_the_Baptist">John the Baptist</a>', type: 'range', start: d.setFullYear(5), end: d.setFullYear(30) },
-      { id: 5033, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Jesus">Jesus</a>', type: 'range', start: d.setFullYear(4), end: d.setFullYear(33) },
-      { id: 5034, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Peter">Peter</a>', type: 'range', start: d.setFullYear(1), end: d.setFullYear(64) },
-      { id: 5035, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Paul_the_Apostle">Paul</a>', type: 'range', start: d.setFullYear(5), end: d.setFullYear(67) },
-      { id: 5036, group: 1, content: '<a href="https://en.wikipedia.org/wiki/James,_son_of_Zebedee">James</a>', type: 'range', start: d.setFullYear(1), end: d.setFullYear(44) },
-      { id: 5037, group: 1, content: '<a href="https://en.wikipedia.org/wiki/John_(apostle)">John</a>', type: 'range', start: d.setFullYear(1), end: d.setFullYear(100) },
-      { id: 5038, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Andrew_(disciple)">Andrew</a>', type: 'range', start: d.setFullYear(1), end: d.setFullYear(60) },
-      { id: 5039, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Philip_(apostle)">Philip</a>', type: 'range', start: d.setFullYear(1), end: d.setFullYear(80) },
-      { id: 5040, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Bartholomew_(apostle)">Bartholomew</a>', type: 'range', start: d.setFullYear(1), end: d.setFullYear(60) },
-      { id: 5041, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Matthew_(saint)">Matthew</a>', type: 'range', start: d.setFullYear(1), end: d.setFullYear(60) },
-      { id: 5042, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Thomas_(apostle)">Thomas</a>', type: 'range', start: d.setFullYear(1), end: d.setFullYear(72) },
-      { id: 5043, group: 1, content: '<a href="https://en.wikipedia.org/wiki/James,_son_of_Alphaeus">James</a>', type: 'range', start: d.setFullYear(1), end: d.setFullYear(62) },
-      { id: 5044, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Thaddeus_(apostle)">Thaddeus</a>', type: 'range', start: d.setFullYear(1), end: d.setFullYear(72) },
-      { id: 5045, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Simon_the_Zealot">Simon</a>', type: 'range', start: d.setFullYear(1), end: d.setFullYear(74) },
-      { id: 5046, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Judas_Iscariot">Judas</a>', type: 'range', start: d.setFullYear(1), end: d.setFullYear(30) },
-      { id: 5047, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Mary,_mother_of_Jesus">Mary</a>', type: 'range', start: d.setFullYear(1), end: d.setFullYear(69) },
-      { id: 5048, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Joseph_(husband_of_Mary)">Joseph</a>', type: 'range', start: d.setFullYear(1), end: d.setFullYear(100) },
-      { id: 5049, group: 1, content: '<a href="https://en.wikipedia.org/wiki/John_the_Evangelist">John the Evangelist</a>', type: 'range', start: d.setFullYear(1), end: d.setFullYear(100) },
-      { id: 5050, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Mark_the_Evangelist">Mark</a>', type: 'range', start: d.setFullYear(5), end: d.setFullYear(65) },
-      { id: 5051, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Luke_the_Evangelist">Luke</a>', type: 'range', start: d.setFullYear(5), end: d.setFullYear(65) },
-      { id: 5052, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Matthew_(saint)">Matthew</a>', type: 'range', start: d.setFullYear(5), end: d.setFullYear(60) },
-      { id: 5053, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Stephen">Stephen</a>', type: 'range', start: d.setFullYear(1), end: d.setFullYear(34) },
-      { id: 5054, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Saul_of_Tarsus">Saul</a>', type: 'range', start: d.setFullYear(5), end: d.setFullYear(67) },
-      { id: 5055, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Barnabas">Barnabas</a>', type: 'range', start: d.setFullYear(5), end: d.setFullYear(61) },
-      { id: 5056, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Timothy">Timothy</a>', type: 'range', start: d.setFullYear(5), end: d.setFullYear(97) },
-      { id: 5057, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Titus">Titus</a>', type: 'range', start: d.setFullYear(5), end: d.setFullYear(95) },
-      { id: 5058, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Philemon_(New_Testament)">Philemon</a>', type: 'range', start: d.setFullYear(5), end: d.setFullYear(95) },
-      { id: 5059, group: 1, content: '<a href="https://en.wikipedia.org/wiki/James,_brother_of_Jesus">James</a>', type: 'range', start: d.setFullYear(5), end: d.setFullYear(62) },
-      { id: 5086, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Isaiah">Isaiah</a>', type: 'range', start: d.setFullYear(-740), end: d.setFullYear(-701) },
-      { id: 5087, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Jeremiah">Jeremiah</a>', type: 'range', start: d.setFullYear(-650), end: d.setFullYear(-570) },
-      { id: 5089, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Daniel">Daniel</a>', type: 'range', start: d.setFullYear(-605), end: d.setFullYear(-535) },
-      { id: 5090, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Amos">Amos</a>', type: 'range', start: d.setFullYear(-750), end: d.setFullYear(-725) },
-      { id: 5091, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Jonah">Jonah</a>', type: 'range', start: d.setFullYear(-800), end: d.setFullYear(-750) },
-      { id: 5094, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Zephaniah">Zephaniah</a>', type: 'range', start: d.setFullYear(-640), end: d.setFullYear(-610) },
-      { id: 5095, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Nahum">Nahum</a>', type: 'range', start: d.setFullYear(-660), end: d.setFullYear(-610) },
-      { id: 5096, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Habakkuk">Habakkuk</a>', type: 'range', start: d.setFullYear(-640), end: d.setFullYear(-610) },
-      { id: 5097, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Zechariah_(Hebrew_prophet)">Zechariah</a>', type: 'range', start: d.setFullYear(-520), end: d.setFullYear(-480) },
-      { id: 5100, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Aaron">Aaron</a>', type: 'range', start: d.setFullYear(-1250), end: d.setFullYear(-1131) },
-      { id: 5102, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Joshua">Joshua</a>', type: 'range', start: d.setFullYear(-1250), end: d.setFullYear(-1060) },
-      { id: 5103, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Caleb">Caleb</a>', type: 'range', start: d.setFullYear(-1555), end: d.setFullYear(-1435) },
-      { id: 5104, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Gideon">Gideon</a>', type: 'range', start: d.setFullYear(-1150), end: d.setFullYear(-1070) },
-      { id: 5105, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Barak_(biblical_figure)">Barak</a>', type: 'range', start: d.setFullYear(-1150), end: d.setFullYear(-1070) },
-      { id: 5106, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Samson">Samson</a>', type: 'range', start: d.setFullYear(-1100), end: d.setFullYear(-1050) },
-      { id: 5107, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Jephthah">Jephthah</a>', type: 'range', start: d.setFullYear(-1100), end: d.setFullYear(-1050) },
-      { id: 5108, group: 1, content: '<a href="https://en.wikipedia.org/wiki/David">David</a>', type: 'range', start: d.setFullYear(-1040), end: d.setFullYear(-970) },
-      { id: 5110, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Rehoboam">Rehoboam</a>', type: 'range', start: d.setFullYear(-973), end: d.setFullYear(-914) },
-      { id: 5111, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Abijah_of_Judah">Abijah</a>', type: 'range', start: d.setFullYear(-913), end: d.setFullYear(-910) },
-      { id: 5112, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Asa_of_Judah">Asa</a>', type: 'range', start: d.setFullYear(-912), end: d.setFullYear(-873) },
-      { id: 5113, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Jehoshaphat">Jehoshaphat</a>', type: 'range', start: d.setFullYear(-873), end: d.setFullYear(-849) },
-      { id: 5114, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Jehoram_of_Judah">Jehoram</a>', type: 'range', start: d.setFullYear(-849), end: d.setFullYear(-842) },
-      { id: 5115, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Ahaziah_of_Judah">Ahaziah</a>', type: 'range', start: d.setFullYear(-841), end: d.setFullYear(-841) },
-      { id: 5116, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Athaliah">Athaliah</a>', type: 'range', start: d.setFullYear(-841), end: d.setFullYear(-835) },
-      { id: 5117, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Joash">Joash</a>', type: 'range', start: d.setFullYear(-835), end: d.setFullYear(-796) },
-      { id: 5118, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Amaziah_of_Judah">Amaziah</a>', type: 'range', start: d.setFullYear(-796), end: d.setFullYear(-767) },
-      { id: 5119, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Uzziah">Uzziah</a>', type: 'range', start: d.setFullYear(-767), end: d.setFullYear(-740) },
-      { id: 5120, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Jotham">Jotham</a>', type: 'range', start: d.setFullYear(-740), end: d.setFullYear(-732) },
-      { id: 5121, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Ahaz">Ahaz</a>', type: 'range', start: d.setFullYear(-732), end: d.setFullYear(-715) },
-      { id: 5123, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Manasseh">Manasseh</a>', type: 'range', start: d.setFullYear(-686), end: d.setFullYear(-642) },
+      { id: 5002, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Noah">Noah</a>', type: 'range', start: d.setFullYear(-0156), end: d.setFullYear(-0250) ,className: "yellow" },
+      { id: 5003, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Abraham">Abraham</a>', type: 'range', start: d.setFullYear(-1812), end: d.setFullYear(-1637) ,className: "yellow" },
+      { id: 5004, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Isaac">Isaac</a>', type: 'range', start: d.setFullYear(-1802), end: d.setFullYear(-1677) ,className: "yellow" ,className: "yellow" },
+      { id: 5005, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Jacob">Jacob</a>', type: 'range', start: d.setFullYear(-1767), end: d.setFullYear(-1647) ,className: "yellow" },
+      { id: 5006, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Joseph_(son_of_Jacob)">Joseph</a>', type: 'range', start: d.setFullYear(-1711), end: d.setFullYear(-1601) ,className: "yellow" },
+      { id: 5007, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Moses">Moses</a>', type: 'range', start: d.setFullYear(-1250), end: d.setFullYear(-1130) ,className: "yellow" },
+      { id: 5009, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Joshua">Joshua</a>', type: 'range', start: d.setFullYear(-1355), end: d.setFullYear(-1245) ,className: "yellow" },
+      { id: 5010, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Samuel">Samuel</a>', type: 'range', start: d.setFullYear(-1100), end: d.setFullYear(-1010) ,className: "yellow" },
+      { id: 5012, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Solomon">Solomon</a>', type: 'range', start: d.setFullYear(-970), end: d.setFullYear(-931) ,className: "yellow" },
+      { id: 5013, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Elijah">Elijah</a>', type: 'range', start: d.setFullYear(-874), end: d.setFullYear(-800) ,className: "yellow" },
+      { id: 5014, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Elisha">Elisha</a>', type: 'range', start: d.setFullYear(-848), end: d.setFullYear(-797) ,className: "yellow" },
+      { id: 5015, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Jonah">Jonah</a>', type: 'range', start: d.setFullYear(-740), end: d.setFullYear(-700) ,className: "yellow" },
+      { id: 5016, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Isaiah">Isaiah</a>', type: 'range', start: d.setFullYear(-740), end: d.setFullYear(-700) ,className: "yellow" },
+      { id: 5018, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Ezekiel">Ezekiel</a>', type: 'range', start: d.setFullYear(-623), end: d.setFullYear(-571) ,className: "yellow" },
+      { id: 5019, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Daniel">Daniel</a>', type: 'range', start: d.setFullYear(-605), end: d.setFullYear(-535) ,className: "yellow" },
+      { id: 5020, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Hosea">Hosea</a>', type: 'range', start: d.setFullYear(-745), end: d.setFullYear(-725) ,className: "yellow" },
+      { id: 5021, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Joel_(prophet)">Joel</a>', type: 'range', start: d.setFullYear(-835), end: d.setFullYear(-796) ,className: "yellow" },
+      { id: 5023, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Obadiah">Obadiah</a>', type: 'range', start: d.setFullYear(-850), end: d.setFullYear(-800) ,className: "yellow" },
+      { id: 5025, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Micah">Micah</a>', type: 'range', start: d.setFullYear(-740), end: d.setFullYear(-700) ,className: "yellow" },
+      { id: 5026, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Nahum">Nahum</a>', type: 'range', start: d.setFullYear(-645), end: d.setFullYear(-605) ,className: "yellow" },
+      { id: 5027, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Habakkuk">Habakkuk</a>', type: 'range', start: d.setFullYear(-605), end: d.setFullYear(-550) ,className: "yellow" },
+      { id: 5028, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Zephaniah">Zephaniah</a>', type: 'range', start: d.setFullYear(-630), end: d.setFullYear(-620) ,className: "yellow" },
+      { id: 5029, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Haggai">Haggai</a>', type: 'range', start: d.setFullYear(-520), end: d.setFullYear(-480) ,className: "yellow" },
+      { id: 5030, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Zechariah_(Hebrew_prophet)">Zechariah</a>', type: 'range', start: d.setFullYear(-480), end: d.setFullYear(-420) ,className: "yellow" },
+      { id: 5031, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Malachi">Malachi</a>', type: 'range', start: d.setFullYear(-400), end: d.setFullYear(-350) ,className: "yellow" },
+      { id: 5032, group: 1, content: '<a href="https://en.wikipedia.org/wiki/John_the_Baptist">John the Baptist</a>', type: 'range', start: d.setFullYear(5), end: d.setFullYear(30) ,className: "yellow" },
+      { id: 5033, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Jesus">Jesus</a>', type: 'range', start: d.setFullYear(4), end: d.setFullYear(33) ,className: "yellow" ,className: "yellow" },
+      { id: 5034, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Peter">Peter</a>', type: 'range', start: d.setFullYear(1), end: d.setFullYear(64) ,className: "yellow" },
+      { id: 5035, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Paul_the_Apostle">Paul</a>', type: 'range', start: d.setFullYear(5), end: d.setFullYear(67) ,className: "yellow" },
+      { id: 5036, group: 1, content: '<a href="https://en.wikipedia.org/wiki/James,_son_of_Zebedee">James</a>', type: 'range', start: d.setFullYear(1), end: d.setFullYear(44) ,className: "yellow" },
+      { id: 5037, group: 1, content: '<a href="https://en.wikipedia.org/wiki/John_(apostle)">John</a>', type: 'range', start: d.setFullYear(1), end: d.setFullYear(100) ,className: "yellow" },
+      { id: 5038, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Andrew_(disciple)">Andrew</a>', type: 'range', start: d.setFullYear(1), end: d.setFullYear(60) ,className: "yellow" },
+      { id: 5039, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Philip_(apostle)">Philip</a>', type: 'range', start: d.setFullYear(1), end: d.setFullYear(80) ,className: "yellow" },
+      { id: 5040, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Bartholomew_(apostle)">Bartholomew</a>', type: 'range', start: d.setFullYear(1), end: d.setFullYear(60) ,className: "yellow" },
+      { id: 5041, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Matthew_(saint)">Matthew</a>', type: 'range', start: d.setFullYear(1), end: d.setFullYear(60) ,className: "yellow" },
+      { id: 5042, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Thomas_(apostle)">Thomas</a>', type: 'range', start: d.setFullYear(1), end: d.setFullYear(72) ,className: "yellow" },
+      { id: 5043, group: 1, content: '<a href="https://en.wikipedia.org/wiki/James,_son_of_Alphaeus">James</a>', type: 'range', start: d.setFullYear(1), end: d.setFullYear(62) ,className: "yellow" },
+      { id: 5044, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Thaddeus_(apostle)">Thaddeus</a>', type: 'range', start: d.setFullYear(1), end: d.setFullYear(72) ,className: "yellow" },
+      { id: 5045, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Simon_the_Zealot">Simon</a>', type: 'range', start: d.setFullYear(1), end: d.setFullYear(74) ,className: "yellow" },
+      { id: 5046, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Judas_Iscariot">Judas</a>', type: 'range', start: d.setFullYear(1), end: d.setFullYear(30) ,className: "yellow" },
+      { id: 5047, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Mary,_mother_of_Jesus">Mary</a>', type: 'range', start: d.setFullYear(1), end: d.setFullYear(69) ,className: "yellow" },
+      { id: 5048, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Joseph_(husband_of_Mary)">Joseph</a>', type: 'range', start: d.setFullYear(1), end: d.setFullYear(100) ,className: "yellow" },
+      { id: 5049, group: 1, content: '<a href="https://en.wikipedia.org/wiki/John_the_Evangelist">John the Evangelist</a>', type: 'range', start: d.setFullYear(1), end: d.setFullYear(100) ,className: "yellow" },
+      { id: 5050, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Mark_the_Evangelist">Mark</a>', type: 'range', start: d.setFullYear(5), end: d.setFullYear(65) ,className: "yellow" },
+      { id: 5051, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Luke_the_Evangelist">Luke</a>', type: 'range', start: d.setFullYear(5), end: d.setFullYear(65) ,className: "yellow" },
+      { id: 5052, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Matthew_(saint)">Matthew</a>', type: 'range', start: d.setFullYear(5), end: d.setFullYear(60) ,className: "yellow" },
+      { id: 5053, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Stephen">Stephen</a>', type: 'range', start: d.setFullYear(1), end: d.setFullYear(34) ,className: "yellow" },
+      { id: 5054, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Saul_of_Tarsus">Saul</a>', type: 'range', start: d.setFullYear(5), end: d.setFullYear(67) ,className: "yellow" },
+      { id: 5055, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Barnabas">Barnabas</a>', type: 'range', start: d.setFullYear(5), end: d.setFullYear(61) ,className: "yellow" },
+      { id: 5056, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Timothy">Timothy</a>', type: 'range', start: d.setFullYear(5), end: d.setFullYear(97) ,className: "yellow" },
+      { id: 5057, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Titus">Titus</a>', type: 'range', start: d.setFullYear(5), end: d.setFullYear(95) ,className: "yellow" },
+      { id: 5058, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Philemon_(New_Testament)">Philemon</a>', type: 'range', start: d.setFullYear(5), end: d.setFullYear(95) ,className: "yellow" },
+      { id: 5059, group: 1, content: '<a href="https://en.wikipedia.org/wiki/James,_brother_of_Jesus">James</a>', type: 'range', start: d.setFullYear(5), end: d.setFullYear(62) ,className: "yellow" },
+      { id: 5086, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Isaiah">Isaiah</a>', type: 'range', start: d.setFullYear(-740), end: d.setFullYear(-701) ,className: "yellow" },
+      { id: 5087, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Jeremiah">Jeremiah</a>', type: 'range', start: d.setFullYear(-650), end: d.setFullYear(-570) ,className: "yellow" },
+      { id: 5089, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Daniel">Daniel</a>', type: 'range', start: d.setFullYear(-605), end: d.setFullYear(-535) ,className: "yellow" },
+      { id: 5090, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Amos">Amos</a>', type: 'range', start: d.setFullYear(-750), end: d.setFullYear(-725) ,className: "yellow" },
+      { id: 5091, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Jonah">Jonah</a>', type: 'range', start: d.setFullYear(-800), end: d.setFullYear(-750) ,className: "yellow" },
+      { id: 5094, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Zephaniah">Zephaniah</a>', type: 'range', start: d.setFullYear(-640), end: d.setFullYear(-610) ,className: "yellow" },
+      { id: 5095, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Nahum">Nahum</a>', type: 'range', start: d.setFullYear(-660), end: d.setFullYear(-610) ,className: "yellow" },
+      { id: 5096, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Habakkuk">Habakkuk</a>', type: 'range', start: d.setFullYear(-640), end: d.setFullYear(-610) ,className: "yellow" },
+      { id: 5097, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Zechariah_(Hebrew_prophet)">Zechariah</a>', type: 'range', start: d.setFullYear(-520), end: d.setFullYear(-480) ,className: "yellow" },
+      { id: 5100, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Aaron">Aaron</a>', type: 'range', start: d.setFullYear(-1250), end: d.setFullYear(-1131) ,className: "yellow" },
+      { id: 5102, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Joshua">Joshua</a>', type: 'range', start: d.setFullYear(-1250), end: d.setFullYear(-1060) ,className: "yellow" },
+      { id: 5103, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Caleb">Caleb</a>', type: 'range', start: d.setFullYear(-1555), end: d.setFullYear(-1435) ,className: "yellow" },
+      { id: 5104, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Gideon">Gideon</a>', type: 'range', start: d.setFullYear(-1150), end: d.setFullYear(-1070) ,className: "yellow" },
+      { id: 5105, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Barak_(biblical_figure)">Barak</a>', type: 'range', start: d.setFullYear(-1150), end: d.setFullYear(-1070) ,className: "yellow" },
+      { id: 5106, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Samson">Samson</a>', type: 'range', start: d.setFullYear(-1100), end: d.setFullYear(-1050) ,className: "yellow" },
+      { id: 5107, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Jephthah">Jephthah</a>', type: 'range', start: d.setFullYear(-1100), end: d.setFullYear(-1050) ,className: "yellow" },
+      { id: 5108, group: 1, content: '<a href="https://en.wikipedia.org/wiki/David">David</a>', type: 'range', start: d.setFullYear(-1040), end: d.setFullYear(-970) ,className: "yellow" },
+      { id: 5110, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Rehoboam">Rehoboam</a>', type: 'range', start: d.setFullYear(-973), end: d.setFullYear(-914) ,className: "yellow" },
+      { id: 5111, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Abijah_of_Judah">Abijah</a>', type: 'range', start: d.setFullYear(-913), end: d.setFullYear(-910) ,className: "yellow" },
+      { id: 5112, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Asa_of_Judah">Asa</a>', type: 'range', start: d.setFullYear(-912), end: d.setFullYear(-873) ,className: "yellow" },
+      { id: 5113, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Jehoshaphat">Jehoshaphat</a>', type: 'range', start: d.setFullYear(-873), end: d.setFullYear(-849) ,className: "yellow" },
+      { id: 5114, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Jehoram_of_Judah">Jehoram</a>', type: 'range', start: d.setFullYear(-849), end: d.setFullYear(-842) ,className: "yellow" },
+      { id: 5115, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Ahaziah_of_Judah">Ahaziah</a>', type: 'range', start: d.setFullYear(-841), end: d.setFullYear(-841) ,className: "yellow" },
+      { id: 5116, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Athaliah">Athaliah</a>', type: 'range', start: d.setFullYear(-841), end: d.setFullYear(-835) ,className: "yellow" },
+      { id: 5117, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Joash">Joash</a>', type: 'range', start: d.setFullYear(-835), end: d.setFullYear(-796) ,className: "yellow" },
+      { id: 5118, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Amaziah_of_Judah">Amaziah</a>', type: 'range', start: d.setFullYear(-796), end: d.setFullYear(-767) ,className: "yellow" },
+      { id: 5119, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Uzziah">Uzziah</a>', type: 'range', start: d.setFullYear(-767), end: d.setFullYear(-740) ,className: "yellow" },
+      { id: 5120, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Jotham">Jotham</a>', type: 'range', start: d.setFullYear(-740), end: d.setFullYear(-732) ,className: "yellow" },
+      { id: 5121, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Ahaz">Ahaz</a>', type: 'range', start: d.setFullYear(-732), end: d.setFullYear(-715) ,className: "yellow" },
+      { id: 5123, group: 1, content: '<a href="https://en.wikipedia.org/wiki/Manasseh">Manasseh</a>', type: 'range', start: d.setFullYear(-686), end: d.setFullYear(-642) ,className: "yellow" },
 
 
 
@@ -907,7 +893,7 @@
     timeline.setCustomTimeMarker("dragable", id1, true);
     timeline.addCustomTime('1450-01-01', id2);
     timeline.setCustomTimeMarker("dragable", id2, false);
-    timeline.addCustomTime(d.setFullYear(30), id3);
+    timeline.addCustomTime(d.setFullYear(33), id3);
     timeline.setCustomTimeMarker("dragable", id3, false);
     timeline.addCustomTime('632-01-01', id4);
     timeline.setCustomTimeMarker("dragable", id4, false);
@@ -1004,9 +990,18 @@
 
 
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2NS49XHM7L"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-2NS49XHM7L');
+</script>
 
 
 
 
 </body>
+</html>
